@@ -1,0 +1,65 @@
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-color: #6BA3D0;
+    --secondary-color: #ffffff;
+    --accent-color: #F7DC6F;
+    --accent-blue: #85C1E9;
+    --text-primary: #fff;
+    --bg-primary:#2C3E50;
+    --bg-secondary: #1a252f;
+    --text-secondary: #7F8C8D;
+    --bg-light: #EBF5FB;
+    --bg-gold: #FEF9E7;
+    --transition-smooth: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Inter", sans-serif;
+    font-size: 18px;
+    font-weight: 300;
+    line-height: 1.6;
+    color: #fff;
+    background-color: var(--bg-primary);
+    overflow-x: hidden;
+    font-optical-sizing: auto;
+}
+
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+/* Animations */
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.fade-in {
+    animation: fadeInUp 1s ease-out;
+}
+
+.fade-in-up {
+    opacity: 0;
+    transform: translateY(30px);
+}
+
+.fade-in-up {
+    animation: fadeInUp 0.8s forwards;
+}
+/* .fade-in-up.visible {
+    animation: fadeInUp 0.8s forwards;
+} */

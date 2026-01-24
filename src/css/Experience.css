@@ -1,0 +1,205 @@
+/* Experience Page Styles */
+.exp-header {
+    padding: 0rem 0 3rem 0;
+}
+
+.exp-title {
+    font-size: 4rem;
+    font-weight: 700;
+    text-align: center;
+    color: var(--text-primary);
+    opacity: 0;
+    transform: translateY(30px);
+}
+
+.exp-title {
+    animation: fadeInUp 0.8s forwards;
+}
+/* .exp-title.visible {
+    animation: fadeInUp 0.8s forwards;
+} */
+
+.exp-featured-section {
+    padding: 0 0 4rem 0;
+}
+
+.exp-featured-photo {
+    max-width: 1120px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.exp-featured-img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 4px;
+}
+
+/* Experience Dropdown List */
+.exp-list-section {
+    padding: 4rem 0;
+}
+
+.exp-list {
+    max-width: 900px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-rows: 1fr;
+    /* This will allow us to animate the rows */
+}
+
+.exp-item {
+    border-bottom: 1px solid #E5E7EB;
+    display: grid;
+    grid-template-rows: auto 0fr;
+    transition: grid-template-rows 0.3s cubic-bezier(0.4,0,0.2,1);
+    overflow: hidden;
+}
+
+.exp-item.active {
+    grid-template-rows: auto 1fr;
+}
+
+.exp-item-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 0;
+    cursor: pointer;
+    user-select: none;
+}
+
+.exp-item-header h3 {
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: var(--text-primary);
+    margin: 0;
+}
+
+.exp-toggle {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    color: var(--text-primary);
+    cursor: pointer;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: var(--transition-smooth);
+    outline: none;
+}
+
+
+.exp-item.active .exp-toggle {
+    transform: rotate(45deg);
+}
+
+.exp-item-content {
+    overflow: hidden;
+    min-height: 0;
+    transition: padding 0.3s cubic-bezier(0.4,0,0.2,1);
+    padding-bottom: 0;
+}
+
+.exp-item.active .exp-item-content {
+    padding-bottom: 1.5rem;
+}
+
+.exp-item-content p {
+    color: var(--text-secondary);
+    line-height: 1.6;
+    font-size: 16px;
+    margin: 0;
+}
+
+/* Experience Gallery */
+.exp-gallery-section {
+    padding: 4rem 0 8rem 0;
+}
+
+.exp-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-auto-rows: 200px;
+    gap: 1.5rem;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.exp-gallery-item {
+    border-radius: 2px;
+    overflow: hidden;
+    background: #e5e5e5;
+    box-sizing: border-box;
+}
+
+/* Responsive Masonry-like Gallery: Fill holes by removing conflicting spans and using only specific items for larger spans */
+
+/* All other items use default 1x1 grid placement to avoid holes */
+.exp-gallery-item {
+    min-width: 0;
+    min-height: 0;
+    grid-column: auto;
+    grid-row: auto;
+}
+
+/* Make every 7th gallery item larger (2x2) */
+.exp-gallery-item:nth-child(7n+1) {
+    grid-column: span 2;
+    grid-row: span 2;
+}
+
+/* Make every 5th gallery item taller (1x2) */
+.exp-gallery-item:nth-child(5n+3) {
+    grid-row: span 2;
+}
+
+/* Make every 4th gallery item wider (2x1) */
+.exp-gallery-item:nth-child(4n+2) {
+    grid-column: span 2;
+}
+
+.exp-gallery-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    box-sizing: border-box;
+    transform: scale(1);
+    transition: transform 0.3s ease;
+}
+.exp-gallery-item:hover .exp-gallery-img {
+    transform: scale(1.05);
+    transition: transform 0.3s ease;
+}
+
+@media (max-width: 1024px) {
+    .exp-gallery {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .exp-title {
+        font-size: 2.5rem;
+    }
+    
+    .exp-gallery {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .exp-item-header h3 {
+        font-size: 1rem;
+    }
+    
+    .about-title {
+        font-size: 2.5rem;
+    }
+    
+    .about-block h2 {
+        font-size: 1.3rem;
+    }
+}

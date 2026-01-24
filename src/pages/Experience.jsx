@@ -1,0 +1,75 @@
+import React from 'react';
+import ExperienceItem from '../components/ExperienceItem';
+import ExperienceImage from '../images/experiences/FMSC.jpg';
+import '../css/Experience.css';
+
+function Experience() {
+        const images = import.meta.glob('../images/experiences/*.{jpg,jpeg,png}', { eager: true });
+
+    const experiences = [
+        { filename: "Brotherhood.jpg", alt: "Brotherhood" },
+        { filename: "Brotherhood 2.jpg", alt: "Brotherhood" },
+        { filename: "FMSC 2.jpg", alt: "FMSC" },
+        { filename: "Camping Trip.jpg", alt: "Camping Trip" },
+        { filename: "IHSV.jpg", alt: "IHSV" },
+        { filename: "Pro Player.jpg", alt: "Pro Player" },
+        { filename: "Pro Playe 2.jpg", alt: "Pro Player 2" },
+        { filename: "Red Bull Chariot Race.jpg", alt: "Red Bull Chariot Race" },
+        { filename: "Sigma Chi Tailgate Tent.jpg", alt: "Tailgate" },
+        { filename: "Skydive.jpg", alt: "Skydive" },
+    ].map(exp => ({
+        src: images[`../images/experiences/${exp.filename}`]?.default,
+        alt: exp.alt
+    }));
+
+    const experienceItems = [
+        { title: "Derby Days", description: "Our annual week-long philanthropy event benefiting the Huntsman Cancer Foundation. Brothers participate in various competitions and activities to raise money and awareness." },
+        { title: "Formal Events", description: "Semester formals and date nights at premier venues across Arizona. These events strengthen brotherhood and create lasting memories." },
+        { title: "Intramural Sports", description: "Compete in football, basketball, soccer, and more throughout the year. Our teams consistently rank among the top in ASU's intramural leagues." },
+        { title: "Brotherhood Retreats", description: "Annual retreats to strengthen bonds and build lifelong friendships. These getaways provide time for reflection, team building, and fun." },
+        { title: "Community Service", description: "Regular volunteer opportunities with local Tempe organizations. We're committed to making a positive impact in our community." },
+        { title: "Networking Events", description: "Connect with alumni and industry professionals at exclusive events. Build your network and explore career opportunities." },
+        { title: "Tailgates & Game Days", description: "Experience ASU football with the best tailgate on campus. Join us for pre-game festivities and cheer on the Sun Devils." },
+        { title: "Study Sessions", description: "Academic support and group study sessions to ensure scholastic success. Our brothers maintain a strong GPA through mutual support." },
+    ];
+
+    return (
+        <>
+            <section className="exp-header">
+                <div className="container">
+                    <h1 className="exp-title fade-in-up">The Experience</h1>
+                </div>
+            </section>
+
+            <section className="exp-featured-section">
+                <div className="exp-featured-photo">
+                    <img src={ExperienceImage} alt="Experience" className="exp-featured-img" />
+                </div>
+            </section>
+
+            <section className="exp-list-section">
+                <div className="container">
+                    <div className="exp-list">
+                        {experienceItems.map((item, index) => (
+                            <ExperienceItem key={index} title={item.title} description={item.description} />
+                        ))}
+                    </div>
+                </div>
+            </section>
+
+            <section className="exp-gallery-section">
+                <div className="container">
+                    <div className="exp-gallery">
+                        {experiences.map((experience, index) => (
+                            <div className="exp-gallery-item" key={index}>
+                                <img src={experience.src} alt={experience.alt} className="exp-gallery-img" />
+                            </div>
+                        ))}
+                    </div>
+                </div>
+            </section>
+        </>
+    );
+}
+
+export default Experience;

@@ -1,0 +1,53 @@
+/* About Page Styles */
+
+.about-title {
+    font-size: 4rem;
+    font-weight: 700;
+    text-align: center;
+    color: var(--text-primary);
+    opacity: 0;
+    transform: translateY(30px);
+}
+
+.about-title {
+    animation: fadeInUp 0.8s forwards;
+}
+/* .about-title.visible {
+    animation: fadeInUp 0.8s forwards;
+} */
+
+.about-content-section {
+    padding: 2rem 0 8rem 0;
+}
+
+.about-content-container {
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.about-block {
+    margin-bottom: 4rem;
+    opacity: 0;
+    transform: translateY(30px);
+}
+
+.about-block {
+    animation: fadeInUp 0.8s forwards;
+}
+/* .about-block.visible {
+    animation: fadeInUp 0.8s forwards;
+} */
+
+.about-block h2 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 1rem;
+}
+
+.about-block p {
+    font-size: 18px;
+    line-height: 1.8;
+    color: var(--text-secondary);
+}
