@@ -10,6 +10,10 @@ function Navbar() {
         setIsMenuOpen(!isMenuOpen);
     };
 
+    const closeMenu = () => {
+        setIsMenuOpen(false);
+    };
+
     return (
         <nav className="navbar navbar-dark" id="navbar">
             <div className="nav-container">
@@ -22,12 +26,12 @@ function Navbar() {
                     <span className="bar"></span>
                 </div>
                 <ul className={`nav-menu ${isMenuOpen ? 'active' : ''}`}>
-                    <li><Link to="/about" className="nav-link">About</Link></li>
-                    <li><Link to="/class" className="nav-link">Class</Link></li>
-                    <li><Link to="/experience" className="nav-link">Experience</Link></li>
-                    <li><Link to="/placements" className="nav-link">Placements</Link></li>
-                    <li><Link to="/donate" className="nav-link">Donate</Link></li>
-                    <li><Link to="/contact" className="nav-link">Contact Us</Link></li>
+                    <li><Link to="/about" className="nav-link" onClick={() => closeMenu()}>About</Link></li>
+                    <li><Link to="/class" className="nav-link" onClick={() => closeMenu()}>Class</Link></li>
+                    <li><Link to="/experience" className="nav-link" onClick={() => closeMenu()}>Experience</Link></li>
+                    <li><Link to="/placements" className="nav-link" onClick={() => closeMenu()}>Placements</Link></li>
+                    <li><Link to="/donate" className="nav-link" onClick={() => closeMenu()}>Donate</Link></li>
+                    <li><Link to="/contact" className="nav-link" onClick={() => closeMenu()}>Contact Us</Link></li>
                 </ul>
             </div>
         </nav>
