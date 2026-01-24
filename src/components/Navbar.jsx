@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import '../css/NavBar.css';
-import crest from '../images/Sigma_Chi_crest.png'; 
+import crest from '../images/Sigma_Chi_Crest.png'; 
 
 function Navbar() {
     return (
