@@ -9,7 +9,7 @@ function Experience() {
     const experiences = [
         {filename: "kkgphilo.webp", alt: "KKG Philanthropy"},
         { filename: "Brotherhood 2.webp", alt: "Brotherhood" },
-        {filename: "spikeball.png", alt: "Spikeball"}, 
+        {filename: "spikeball.webp", alt: "Spikeball"}, 
         { filename: "Brotherhood.webp", alt: "Brotherhood" },
         { filename: "FMSC 2.webp", alt: "FMSC" },
         { filename: "Camping Trip.webp", alt: "Camping Trip" },
