@@ -11,10 +11,10 @@ function Mission() {
                     To develop values-based leaders committed to the betterment of character, 
                     campus, and community.
                 </h2>
-                <div className="motto">
+                {/* <div className="motto">
                     <p className="motto-latin">"In Hoc Signo Vinces"</p>
                     <p className="motto-english">In this sign you will conquer</p>
-                </div>
+                </div> */}
             </div>
         </div>
     </section>

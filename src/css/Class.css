@@ -1,100 +1,228 @@
-/* Executive Board Section */
-.exec-board-section {
-    padding: 4rem 0 8rem 0;
-}
-
-.exec-board-title {
-    font-size: 2.5rem;
-    font-weight: 600;
+/* --- Global Variables --- */
+:root {
+    --color-primary: #003366; /* Adjust to exact Sigma Chi Blue if needed */
+    --color-gold: #FFB300;    /* Adjust to exact Sigma Chi Gold */
+    --color-text-dark: #333333;
+    --color-text-light: #ffffff;
+    --color-background-alt: #f8f9fa;
+    --spacing-section: 5rem 2rem;
+  }
+  
+  /* --- Base Page --- */
+  .alumni-page {
+    font-family: 'Inter', 'Segoe UI', sans-serif; /* Fallback fonts */
+    color: var(--color-text-dark);
+    line-height: 1.6;
+  }
+  
+  /* --- 1. Hero Section --- */
+  .alumni-hero {
+    position: relative;
+    min-height: 60vh;
+    background-size: cover;
+    background-position: center 20%; /* Shifts focus higher up on the group photo */
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .alumni-hero__overlay {
+    position: absolute;
+    inset: 0;
+    background-color: rgba(0, 30, 60, 0.7); /* Deep blue overlay */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     text-align: center;
-    margin-bottom: 4rem;
-    color: var(--text-primary);
-    opacity: 0;
-    transform: translateY(30px);
-}
-
-.exec-board-title {
-    animation: fadeInUp 0.8s forwards;
-}
-/* .exec-board-title.visible {
-    animation: fadeInUp 0.8s forwards;
-} */
-
-.exec-board-grid {
+    padding: 2rem;
+  }
+  
+  .alumni-hero__title {
+    color: var(--color-text-light);
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+  }
+  
+  .alumni-hero__subtitle {
+    color: var(--color-text-light);
+    font-size: clamp(1rem, 2vw, 1.25rem);
+    max-width: 600px;
+  }
+  
+  /* --- 2. Scrapbook Gallery (Auto-Scrolling) --- */
+  .scrapbook-gallery {
+    padding: var(--spacing-section);
+    background-color: var(--color-background-alt);
+    text-align: center;
+    overflow: hidden; /* Hide the scrolling elements outside the container */
+  }
+  
+  .scrapbook-gallery__title {
+    margin-bottom: 3rem;
+    font-size: 2rem;
+    color: var(--color-primary);
+  }
+  
+  .scrapbook-gallery__container {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+  }
+  
+  .scrapbook-gallery__track {
+    display: flex;
+    width: max-content;
+    /* Adjust the 30s to make the scroll faster or slower */
+    animation: scrollTrack 30s linear infinite;
+  }
+  
+  /* Pause animation when user hovers to look at photos */
+  .scrapbook-gallery__container:hover .scrapbook-gallery__track {
+    animation-play-state: paused;
+  }
+  
+  .scrapbook-gallery__item {
+    padding: 0 1rem;
+  }
+  
+  .scrapbook-gallery__image {
+    height: 350px;
+    width: auto;
+    border-radius: 4px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+    border: 10px solid white; /* Polaroid/scrapbook feel */
+    border-bottom-width: 30px;
+    background-color: white;
+    transition: transform 0.3s ease;
+  }
+  
+  .scrapbook-gallery__image:hover {
+    transform: scale(1.02);
+  }
+  
+  @keyframes scrollTrack {
+    0% { transform: translateX(0); }
+    /* Translates exactly half the width of the duplicated track */
+    100% { transform: translateX(-50%); } 
+  }
+  
+  /* --- 3. History Split Section --- */
+  .history-split {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 3rem;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    padding: var(--spacing-section);
+    align-items: center;
     max-width: 1200px;
     margin: 0 auto;
-}
-
-.exec-member {
-    opacity: 0;
-    transform: translateY(30px);
-}
-
-.exec-member {
-    animation: fadeInUp 0.8s forwards;
-}
-/* .exec-member.visible {
-    animation: fadeInUp 0.8s forwards;
-} */
-
-.exec-member-photo {
-    width: 100%;
-    aspect-ratio: 1;
-    border-radius: 4px;
-    overflow: hidden;
+  }
+  
+  .history-split__title {
+    font-size: 2rem;
+    color: var(--color-text-light);
+    margin-bottom: 1.5rem;
+  }
+  
+  .history-split__text {
     margin-bottom: 1rem;
-}
-
-.exec-img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-.exec-caption {
-    font-size: 14px;
-    font-weight: 300;
-    text-align: left;
-    color: var(--text-secondary);
-    margin: 0;
-}
-.class-photo-section {
-    padding: 0 0 4rem 0;
-}
-
-.class-photo {
-    max-width: 1400px;
-    margin: 0 auto;
-    padding: 0 2rem;
-}
-
-.class-photo-img {
+    font-size: 1.1rem;
+    color: var(--color-text-light);
+  }
+  
+  .history-split__image {
     width: 100%;
     height: auto;
-    display: block;
+    border-radius: 8px;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+  }
+  
+  /* --- 4. Alumni Engagement Section --- */
+  .alumni-engagement {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    padding: var(--spacing-section);
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    background-color: var(--color-background-alt);
+  }
+  
+  .alumni-engagement__image {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+  }
+  
+  .alumni-engagement__title {
+    font-size: 2rem;
+    color: var(--color-primary);
+    margin-bottom: 1.5rem;
+  }
+  
+  .alumni-engagement__text {
+    margin-bottom: 1.5rem;
+    font-size: 1.1rem;
+  }
+  
+  .alumni-engagement__actions {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+  
+  .alumni-engagement__button {
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+    font-weight: bold;
+    border: none;
     border-radius: 4px;
-}
-.class-header {
-    padding: 0rem 0 3rem 0;
-}
-
-.class-title {
-    font-size: 4rem;
-    font-weight: 700;
-    text-align: center;
-    color: var(--text-primary);
-    opacity: 0;
-    transform: translateY(30px);
-}
-
-.class-title.visible {
-    animation: fadeInUp 0.8s forwards;
-}
-@media (max-width: 992px) {
-    .exec-board-grid {
-        grid-template-columns: repeat(2, 1fr);
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+  }
+  
+  .alumni-engagement__button:active {
+    transform: translateY(2px);
+  }
+  
+  .alumni-engagement__button--primary {
+    background-color: var(--color-primary);
+    color: var(--color-text-light);
+  }
+  
+  .alumni-engagement__button--primary:hover {
+    background-color: #002244;
+  }
+  
+  .alumni-engagement__button--secondary {
+    background-color: transparent;
+    color: var(--color-primary);
+    border: 2px solid var(--color-primary);
+  }
+  
+  .alumni-engagement__button--secondary:hover {
+    background-color: rgba(0, 51, 102, 0.05);
+  }
+  
+  /* --- Responsive Design --- */
+  @media (max-width: 768px) {
+    .history-split,
+    .alumni-engagement {
+      grid-template-columns: 1fr;
+      gap: 2rem;
     }
-}
+    
+    /* Reverse order on mobile for the bottom section so image is on top */
+    .alumni-engagement__media {
+      order: -1;
+    }
+    
+    .scrapbook-gallery__image {
+      height: 250px; /* Smaller images on mobile */
+    }
+  }

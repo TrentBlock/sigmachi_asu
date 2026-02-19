@@ -27,9 +27,9 @@ function Navbar() {
                 </div>
                 <ul className={`nav-menu ${isMenuOpen ? 'active' : ''}`}>
                     <li><Link to="/about" className="nav-link" onClick={() => closeMenu()}>About</Link></li>
-                    <li><Link to="/class" className="nav-link" onClick={() => closeMenu()}>Class</Link></li>
+                    <li><Link to="/class" className="nav-link" onClick={() => closeMenu()}>History</Link></li>
                     <li><Link to="/experience" className="nav-link" onClick={() => closeMenu()}>Experience</Link></li>
-                    <li><Link to="/placements" className="nav-link" onClick={() => closeMenu()}>Placements</Link></li>
+                    {/* <li><Link to="/placements" className="nav-link" onClick={() => closeMenu()}>Placements</Link></li> */}
                     <li><Link to="/donate" className="nav-link" onClick={() => closeMenu()}>Donate</Link></li>
                     <li><Link to="/contact" className="nav-link" onClick={() => closeMenu()}>Contact Us</Link></li>
                 </ul>

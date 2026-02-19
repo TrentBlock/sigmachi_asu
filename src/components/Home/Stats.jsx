@@ -7,16 +7,16 @@ function Stats() {
         <div className="container">
             <div className="stats-grid">
                 <div className="stat-item fade-in-up visible">
-                    <h3 className="stat-number">150+</h3>
-                    <p className="stat-label">Active Brothers</p>
+                    <h3 className="stat-number">2,000+</h3>
+                    <p className="stat-label">Alumni</p>
                 </div>
                 <div className="stat-item fade-in-up visible">
-                    <h3 className="stat-number">100 years</h3>
-                    <p className="stat-label">History at ASU</p>
+                    <h3 className="stat-number">1960</h3>
+                    <p className="stat-label">ASU Chapter Established</p>
                 </div>
                 <div className="stat-item fade-in-up visible">
-                    <h3 className="stat-number">$50k+</h3>
-                    <p className="stat-label">Raised for Charity</p>
+                    <h3 className="stat-number">3.503</h3>
+                    <p className="stat-label">Average GPA</p>
                 </div>
             </div>
         </div>

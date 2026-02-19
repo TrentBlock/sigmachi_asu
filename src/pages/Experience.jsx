@@ -7,16 +7,16 @@ function Experience() {
         const images = import.meta.glob('../images/experiences/*.{jpg,jpeg,png}', { eager: true });
 
     const experiences = [
-        { filename: "Brotherhood.jpg", alt: "Brotherhood" },
+        {filename: "kkgphilo.jpg", alt: "KKG Philanthropy"},
         { filename: "Brotherhood 2.jpg", alt: "Brotherhood" },
+        {filename: "spikeball.png", alt: "Spikeball"}, 
+        { filename: "Brotherhood.jpg", alt: "Brotherhood" },
         { filename: "FMSC 2.jpg", alt: "FMSC" },
         { filename: "Camping Trip.jpg", alt: "Camping Trip" },
-        { filename: "IHSV.jpg", alt: "IHSV" },
-        { filename: "Pro Player.jpg", alt: "Pro Player" },
-        { filename: "Pro Playe 2.jpg", alt: "Pro Player 2" },
-        { filename: "Red Bull Chariot Race.jpg", alt: "Red Bull Chariot Race" },
+        
+        {filename:"FMSC.jpg", alt: "FMSC"},
+        {filename: "skphilo.png", alt: "SK Philanthropy"},
         { filename: "Sigma Chi Tailgate Tent.jpg", alt: "Tailgate" },
-        { filename: "Skydive.jpg", alt: "Skydive" },
     ].map(exp => ({
         src: images[`../images/experiences/${exp.filename}`]?.default,
         alt: exp.alt
@@ -30,7 +30,6 @@ function Experience() {
         { title: "Community Service", description: "Regular volunteer opportunities with local Tempe organizations. We're committed to making a positive impact in our community." },
         { title: "Networking Events", description: "Connect with alumni and industry professionals at exclusive events. Build your network and explore career opportunities." },
         { title: "Tailgates & Game Days", description: "Experience ASU football with the best tailgate on campus. Join us for pre-game festivities and cheer on the Sun Devils." },
-        { title: "Study Sessions", description: "Academic support and group study sessions to ensure scholastic success. Our brothers maintain a strong GPA through mutual support." },
     ];
 
     return (
@@ -41,9 +40,21 @@ function Experience() {
                 </div>
             </section>
 
-            <section className="exp-featured-section">
+            {/* <section className="exp-featured-section">
                 <div className="exp-featured-photo">
                     <img src={ExperienceImage} alt="Experience" className="exp-featured-img" />
+                </div>
+            </section> */}
+
+<section className="exp-gallery-section">
+                <div className="container">
+                    <div className="exp-gallery">
+                        {experiences.map((experience, index) => (
+                            <div className="exp-gallery-item" key={index}>
+                                <img src={experience.src} alt={experience.alt} className="exp-gallery-img" />
+                            </div>
+                        ))}
+                    </div>
                 </div>
             </section>
 
@@ -57,17 +68,7 @@ function Experience() {
                 </div>
             </section>
 
-            <section className="exp-gallery-section">
-                <div className="container">
-                    <div className="exp-gallery">
-                        {experiences.map((experience, index) => (
-                            <div className="exp-gallery-item" key={index}>
-                                <img src={experience.src} alt={experience.alt} className="exp-gallery-img" />
-                            </div>
-                        ))}
-                    </div>
-                </div>
-            </section>
+           
         </>
     );
 }

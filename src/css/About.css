@@ -1,53 +1,135 @@
-/* About Page Styles */
-
-.about-title {
-    font-size: 4rem;
-    font-weight: 700;
+/* --- Global Variables --- */
+:root {
+    --color-primary: #003366; /* Sigma Chi Blue */
+    --color-primary-light: #004080;
+    --color-gold: #FFB300;    /* Sigma Chi Gold */
+    --color-text-dark: #2d3748;
+    --color-text-muted: #4a5568;
+    --color-bg-light: #f7fafc;
+    --color-white: #ffffff;
+    --shadow-sm: 0 4px 6px rgba(0, 0, 0, 0.05);
+    --shadow-md: 0 10px 15px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* --- Container & Header --- */
+  .about-cards {
+    padding: 5rem 2rem;
+    background-color: var(--color-bg-light);
+    font-family: "EB Garamond", serif;
+  }
+  
+  .about-cards__header {
     text-align: center;
-    color: var(--text-primary);
-    opacity: 0;
-    transform: translateY(30px);
-}
-
-.about-title {
-    animation: fadeInUp 0.8s forwards;
-}
-/* .about-title.visible {
-    animation: fadeInUp 0.8s forwards;
-} */
-
-.about-content-section {
-    padding: 2rem 0 8rem 0;
-}
-
-.about-content-container {
-    max-width: 700px;
-    margin: 0 auto;
-    padding: 0 2rem;
-}
-
-.about-block {
-    margin-bottom: 4rem;
-    opacity: 0;
-    transform: translateY(30px);
-}
-
-.about-block {
-    animation: fadeInUp 0.8s forwards;
-}
-/* .about-block.visible {
-    animation: fadeInUp 0.8s forwards;
-} */
-
-.about-block h2 {
-    font-size: 1.5rem;
-    font-weight: 600;
-    color: var(--text-primary);
+    max-width: 800px;
+    margin: 0 auto 4rem auto;
+  }
+  
+  .about-cards__heading {
+    font-size: 2.5rem;
+    color: var(--color-primary);
     margin-bottom: 1rem;
-}
-
-.about-block p {
-    font-size: 18px;
-    line-height: 1.8;
-    color: var(--text-secondary);
-}
+    letter-spacing: -0.5px;
+  }
+  
+  .about-cards__subheading {
+    font-size: 1.125rem;
+    color: var(--color-text-muted);
+    line-height: 1.6;
+  }
+  
+  /* --- Grid Layout --- */
+  .about-cards__grid {
+    display: grid;
+    /* Auto-fit creates columns based on the minimum width (300px), expanding to fill space */
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  /* --- Card Block --- */
+  .info-card {
+    background-color: var(--color-white);
+    border-radius: 12px;
+    padding: 2.5rem 2rem;
+    box-shadow: var(--shadow-sm);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    border-top: 4px solid transparent;
+  }
+  
+  .info-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-md);
+    border-top-color: var(--color-gold); /* Adds a nice gold accent on hover */
+  }
+  
+  /* --- Card Elements --- */
+  .info-card__icon-wrapper {
+    background-color: rgba(0, 51, 102, 0.05); /* Very light blue background for the icon */
+    color: var(--color-primary);
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+  
+  .info-card__icon-wrapper svg {
+    width: 32px;
+    height: 32px;
+  }
+  
+  .info-card:hover .info-card__icon-wrapper {
+    background-color: var(--color-primary);
+    color: var(--color-white);
+  }
+  
+  .info-card__content {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .info-card__stat {
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: var(--color-primary);
+    margin-bottom: 0.5rem;
+    line-height: 1;
+  }
+  
+  .info-card__title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--color-text-dark);
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+  
+  .info-card__desc {
+    font-size: 1rem;
+    color: var(--color-text-muted);
+    line-height: 1.6;
+  }
+  
+  /* --- Responsive Adjustments --- */
+  @media (max-width: 768px) {
+    .about-cards {
+      padding: 4rem 1.5rem;
+    }
+    
+    .about-cards__heading {
+      font-size: 2rem;
+    }
+    
+    .info-card__stat {
+      font-size: 2rem;
+    }
+  }
