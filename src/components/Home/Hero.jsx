@@ -1,5 +1,5 @@
 import '../../css/Home/Hero.css';
-import sigmaChiHouse from '../../images/oldmain.jpg';
+import sigmaChiHouse from '../../images/oldmain.webp';
 
 function Hero() {
   return (

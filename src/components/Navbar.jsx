@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import '../css/NavBar.css';
-import crest from '../images/Sigma_Chi_Crest.png'; 
+import crest from '../images/Sigma_Chi_Crest.webp'; 
 
 function Navbar() {
     const [isMenuOpen, setIsMenuOpen] = useState(false);

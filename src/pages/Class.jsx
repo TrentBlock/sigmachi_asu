@@ -2,13 +2,13 @@ import React from 'react';
 import "../css/Class.css";
 
 // Importing the images directly
-import heroImg from "../images/IMG_7115.jpg"
-import scrap1 from '../images/IMG_7117.jpg';
-import scrap2 from '../images/IMG_7119.jpg';
-import scrap3 from '../images/IMG_7120.jpg';
-import houseImg from '../images/IMG_7118.jpg';
-import oldalum from "../images/oldalum.jpg";
-import modernImg from '../images/IMG_7121.jpg';
+import heroImg from "../images/IMG_7115.webp"
+import scrap1 from '../images/IMG_7117.webp';
+import scrap2 from '../images/IMG_7119.webp';
+import scrap3 from '../images/IMG_7120.webp';
+import houseImg from '../images/IMG_7118.webp';
+import oldalum from "../images/oldalum.webp";
+import modernImg from '../images/IMG_7121.webp';
 
 const AlumniPage = () => {
   // Array of scrapbook images using the imported variables. 

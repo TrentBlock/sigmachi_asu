@@ -1,22 +1,22 @@
 import React from 'react';
 import ExperienceItem from '../components/ExperienceItem';
-import ExperienceImage from '../images/experiences/FMSC.jpg';
+import ExperienceImage from '../images/experiences/FMSC.webp';
 import '../css/Experience.css';
 
 function Experience() {
-        const images = import.meta.glob('../images/experiences/*.{jpg,jpeg,png}', { eager: true });
+        const images = import.meta.glob('../images/experiences/*.{jpg,jpeg,png,webp}', { eager: true });
 
     const experiences = [
-        {filename: "kkgphilo.jpg", alt: "KKG Philanthropy"},
-        { filename: "Brotherhood 2.jpg", alt: "Brotherhood" },
+        {filename: "kkgphilo.webp", alt: "KKG Philanthropy"},
+        { filename: "Brotherhood 2.webp", alt: "Brotherhood" },
         {filename: "spikeball.png", alt: "Spikeball"}, 
-        { filename: "Brotherhood.jpg", alt: "Brotherhood" },
-        { filename: "FMSC 2.jpg", alt: "FMSC" },
-        { filename: "Camping Trip.jpg", alt: "Camping Trip" },
+        { filename: "Brotherhood.webp", alt: "Brotherhood" },
+        { filename: "FMSC 2.webp", alt: "FMSC" },
+        { filename: "Camping Trip.webp", alt: "Camping Trip" },
         
-        {filename:"FMSC.jpg", alt: "FMSC"},
-        {filename: "skphilo.png", alt: "SK Philanthropy"},
-        { filename: "Sigma Chi Tailgate Tent.jpg", alt: "Tailgate" },
+        {filename:"FMSC.webp", alt: "FMSC"},
+        {filename: "skphilo.webp", alt: "SK Philanthropy"},
+        { filename: "Sigma Chi Tailgate Tent.webp", alt: "Tailgate" },
     ].map(exp => ({
         src: images[`../images/experiences/${exp.filename}`]?.default,
         alt: exp.alt

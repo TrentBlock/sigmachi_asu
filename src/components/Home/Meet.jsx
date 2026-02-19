@@ -1,6 +1,6 @@
 import '../../css/Home/Meet.css';
 import { Link } from 'react-router-dom'
-import alphaClassImg from '../../images/Alpha Class.jpg'
+import alphaClassImg from '../../images/Alpha Class.webp'
 
 function Meet() {
     return (
