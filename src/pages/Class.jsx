@@ -6,7 +6,7 @@ import heroImg from "../images/IMG_7115.jpg"
 import scrap1 from '../images/IMG_7117.jpg';
 import scrap2 from '../images/IMG_7119.jpg';
 import scrap3 from '../images/IMG_7120.jpg';
-import houseImg from '../images/IMG_7118.JPG';
+import houseImg from '../images/IMG_7118.jpg';
 import oldalum from "../images/oldalum.jpg";
 import modernImg from '../images/IMG_7121.jpg';
 
