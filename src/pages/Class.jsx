@@ -48,7 +48,6 @@ return (
                                 src={img.src} 
                                 alt={img.alt} 
                                 className="scrapbook-gallery__image" 
-                                loading='lazy'
                             />
                         </div>
                     ))}
