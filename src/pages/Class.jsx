@@ -38,6 +38,7 @@ return (
         {/* 2. Auto-Scrolling Scrapbook Gallery */}
         <section className="scrapbook-gallery">
             <h2 className="scrapbook-gallery__title">From the Archives</h2>
+            <p className="scrapbook-gallery__swipe-indicator">Swipe to view more &rarr;</p>
             <div className="scrapbook-gallery__container">
                 <div className="scrapbook-gallery__track">
                     {/* Render images twice for the seamless CSS infinite scroll */}
@@ -47,6 +48,7 @@ return (
                                 src={img.src} 
                                 alt={img.alt} 
                                 className="scrapbook-gallery__image" 
+                                loading='lazy'
                             />
                         </div>
                     ))}
@@ -67,7 +69,7 @@ return (
             </div>
             <div className="history-split__media">
                 {/* Using the imported houseImg variable */}
-                <img src={houseImg} alt="Vintage Fraternity House Group" className="history-split__image" />
+                <img loading='lazy' src={houseImg} alt="Vintage Fraternity House Group" className="history-split__image" />
             </div>
         </section>
 
@@ -75,7 +77,7 @@ return (
         <section className="alumni-engagement">
             <div className="alumni-engagement__media">
                 {/* Using the imported modernImg variable */}
-                <img src={modernImg} alt="Sigma Chi Michael F. Haley Memorial Dinner" className="alumni-engagement__image" />
+                <img loading='lazy' src={modernImg} alt="Sigma Chi Michael F. Haley Memorial Dinner" className="alumni-engagement__image" />
             </div>
             <div className="alumni-engagement__content">
                 <h2 className="alumni-engagement__title">Lifelong Bonds & Active Alumni</h2>

@@ -18,7 +18,7 @@ function Navbar() {
         <nav className="navbar navbar-dark" id="navbar">
             <div className="nav-container">
                 <Link to="/" className="logo">
-                    <img src={crest} alt="Sigma Chi Crest" className="logo-img" />
+                    <img loading='eager' src={crest} alt="Sigma Chi Crest" className="logo-img" />
                 </Link>
                 <div className={`hamburger ${isMenuOpen ? 'active' : ''}`} onClick={toggleMenu}>
                     <span className="bar"></span>

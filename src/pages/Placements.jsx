@@ -12,7 +12,7 @@ function Placements() {
 
     <section className="placements-image-section">
         <div className="placements-image-container">
-            <img src={PlacementImage} alt="Placements" className="placements-img" />
+            <img loading="lazy" src={PlacementImage} alt="Placements" className="placements-img" />
         </div>
     </section>
    </>

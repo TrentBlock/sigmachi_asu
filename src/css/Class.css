@@ -101,6 +101,10 @@
   .scrapbook-gallery__image:hover {
     transform: scale(1.02);
   }
+
+  .scrapbook-gallery__swipe-indicator{
+    display: none; /* Hidden on desktop, shown on mobile via media query */
+  }
   
   @keyframes scrollTrack {
     0% { transform: translateX(0); }
@@ -212,6 +216,22 @@
       grid-template-columns: 1fr;
       gap: 2rem;
     }
+
+    /* --- Mobile Swipe Indicator --- */
+    .scrapbook-gallery__swipe-indicator {
+        display: block; /* Make it visible on mobile */
+        font-size: 0.9rem;
+        color: #666666; /* Subtle gray */
+        margin-top: -2rem; /* Pulls it closer to the title */
+        margin-bottom: 1.5rem;
+        font-style: italic;
+        animation: swipePulse 2s infinite ease-in-out;
+      }
+  
+      @keyframes swipePulse {
+        0%, 100% { opacity: 0.5; transform: translateX(0); }
+        50% { opacity: 1; transform: translateX(5px); } /* Slight movement to the right */
+      }
     
     /* Reverse order on mobile for the bottom section so image is on top */
     .alumni-engagement__media {
@@ -226,6 +246,7 @@
     animation: none; /* 1. Turn off the auto-scroll animation */
     overflow-x: auto; /* 2. Enable horizontal scrolling */
     overflow-y: hidden;
+    width: 100%;
     scroll-snap-type: x mandatory; /* 3. Enable snap-to-image */
     -webkit-overflow-scrolling: touch; /* Smooth scrolling for iOS */
     padding-bottom: 1.5rem; /* Room for shadow/spacing */
@@ -241,5 +262,6 @@
   .scrapbook-gallery__item {
     scroll-snap-align: center; /* 4. Snap each image to the center of the screen */
     padding: 0 0.5rem;
+    flex-shrink: 0;
   }
   }

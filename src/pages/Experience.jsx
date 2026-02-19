@@ -51,7 +51,7 @@ function Experience() {
                     <div className="exp-gallery">
                         {experiences.map((experience, index) => (
                             <div className="exp-gallery-item" key={index}>
-                                <img src={experience.src} alt={experience.alt} className="exp-gallery-img" />
+                                <img src={experience.src} alt={experience.alt} loading='lazy' className="exp-gallery-img" />
                             </div>
                         ))}
                     </div>
