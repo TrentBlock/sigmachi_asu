@@ -54,11 +54,11 @@
   }
   
   /* --- 2. Scrapbook Gallery (Auto-Scrolling) --- */
-  .scrapbook-gallery {
+.scrapbook-gallery {
     padding: var(--spacing-section);
     background-color: var(--color-background-alt);
     text-align: center;
-    overflow: hidden; /* Hide the scrolling elements outside the container */
+    overflow: hidden; 
   }
   
   .scrapbook-gallery__title {
@@ -69,18 +69,16 @@
   
   .scrapbook-gallery__container {
     width: 100%;
-    overflow: hidden;
+    overflow: hidden; /* Hides overflow on desktop */
     position: relative;
   }
   
   .scrapbook-gallery__track {
     display: flex;
     width: max-content;
-    /* Adjust the 30s to make the scroll faster or slower */
     animation: scrollTrack 30s linear infinite;
   }
   
-  /* Pause animation when user hovers to look at photos */
   .scrapbook-gallery__container:hover .scrapbook-gallery__track {
     animation-play-state: paused;
   }
@@ -94,7 +92,7 @@
     width: auto;
     border-radius: 4px;
     box-shadow: 0 10px 20px rgba(0,0,0,0.15);
-    border: 10px solid white; /* Polaroid/scrapbook feel */
+    border: 10px solid white;
     border-bottom-width: 30px;
     background-color: white;
     transition: transform 0.3s ease;
@@ -106,10 +104,8 @@
   
   @keyframes scrollTrack {
     0% { transform: translateX(0); }
-    /* Translates exactly half the width of the duplicated track */
     100% { transform: translateX(-50%); } 
   }
-  
   /* --- 3. History Split Section --- */
   .history-split {
     display: grid;
@@ -225,4 +221,25 @@
     .scrapbook-gallery__image {
       height: 250px; /* Smaller images on mobile */
     }
+        /* --- Mobile Gallery Swipe Overrides --- */
+  .scrapbook-gallery__track {
+    animation: none; /* 1. Turn off the auto-scroll animation */
+    overflow-x: auto; /* 2. Enable horizontal scrolling */
+    overflow-y: hidden;
+    scroll-snap-type: x mandatory; /* 3. Enable snap-to-image */
+    -webkit-overflow-scrolling: touch; /* Smooth scrolling for iOS */
+    padding-bottom: 1.5rem; /* Room for shadow/spacing */
+    
+    /* Hide the scrollbar for a cleaner look */
+    scrollbar-width: none; /* Firefox */
+  }
+  
+  .scrapbook-gallery__track::-webkit-scrollbar {
+    display: none; /* Chrome/Safari */
+  }
+
+  .scrapbook-gallery__item {
+    scroll-snap-align: center; /* 4. Snap each image to the center of the screen */
+    padding: 0 0.5rem;
+  }
   }

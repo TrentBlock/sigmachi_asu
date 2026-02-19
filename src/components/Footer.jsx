@@ -19,7 +19,7 @@ function Footer() {
                                 <FaFacebook className="fb--icon"/>
                                 </a>
                         </div>
-                        <p>&copy; 2025 Sigma Chi - Arizona State University</p>
+                        <p>&copy; 2026 Sigma Chi - Arizona State University</p>
                         {/* <p className="disclaimer">Sigma Chi is not legally affiliated with or endorsed by Arizona State University.</p> */}
                 </div>
         </footer>
