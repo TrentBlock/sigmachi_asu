@@ -76,13 +76,18 @@
   .scrapbook-gallery__track {
     display: flex;
     width: max-content;
+    width: -webkit-max-content; /* Safari specific width */
+    
+    /* Standard and WebKit Animation */
     animation: scrollTrack 30s linear infinite;
-
-    /* 1. Force Hardware Acceleration to prevent the hover jump */
+    -webkit-animation: scrollTrack 30s linear infinite;
+    
+    /* Force Hardware Acceleration for Safari */
     will-change: transform;
-    transform: translateZ(0);
-    -webkit-transform: translateZ(0);
+    transform: translate3d(0, 0, 0);
+    -webkit-transform: translate3d(0, 0, 0);
     backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
   }
   
   .scrapbook-gallery__container:hover .scrapbook-gallery__track {
@@ -121,6 +126,10 @@
   @keyframes scrollTrack {
     0% { transform: translateX(0); }
     100% { transform: translateX(-50%); } 
+  }
+  @-webkit-keyframes scrollTrack {
+    0% { -webkit-transform: translateX(0); }
+    100% { -webkit-transform: translateX(-50%); } 
   }
   /* --- 3. History Split Section --- */
   .history-split {
