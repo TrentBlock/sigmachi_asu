@@ -77,6 +77,12 @@
     display: flex;
     width: max-content;
     animation: scrollTrack 30s linear infinite;
+
+    /* 1. Force Hardware Acceleration to prevent the hover jump */
+    will-change: transform;
+    transform: translateZ(0);
+    -webkit-transform: translateZ(0);
+    backface-visibility: hidden;
   }
   
   .scrapbook-gallery__container:hover .scrapbook-gallery__track {
@@ -85,6 +91,12 @@
   
   .scrapbook-gallery__item {
     padding: 0 1rem;
+
+    /* 2. Prevent images from collapsing before they load */
+    flex-shrink: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
   
   .scrapbook-gallery__image {
