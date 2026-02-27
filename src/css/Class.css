@@ -229,6 +229,133 @@
   .alumni-engagement__button--secondary:hover {
     background-color: rgba(0, 51, 102, 0.05);
   }
+  /* --- 3. Wall of Fame Section --- */
+  .wall-of-fame {
+    padding: var(--spacing-section);
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .wall-of-fame__header {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto 3rem auto;
+  }
+
+  .wall-of-fame__title {
+    font-size: 2.5rem;
+    color: #f8f9fa;
+    margin-bottom: 1rem;
+    font-family: "EB Garamond", serif; /* Or keep your default font */
+  }
+
+  .wall-of-fame__subtitle {
+    font-size: 1.1rem;
+    color: #f8f9fa;
+    opacity: 0.8;
+  }
+
+  /* Significant Sigs Grid */
+  .sig-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 2rem;
+  }
+
+  .sig-card {
+    background-color: var(--color-text-light);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .sig-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 20px rgba(0,0,0,0.1);
+  }
+
+  .sig-card__image-wrapper {
+    position: relative;
+    width: 100%;
+    height: 300px; /* Uniform height for portraits */
+  }
+
+  .sig-card__image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top; /* Keeps faces in frame */
+  }
+
+  .sig-card__category {
+    position: absolute;
+    bottom: 1rem;
+    left: 1rem;
+    
+    /* --- Glassmorphism Effects --- */
+    background: rgba(255, 255, 255, 0.15); /* Semi-transparent white base */
+    backdrop-filter: blur(8px); /* The frosted glass blur */
+    -webkit-backdrop-filter: blur(8px); /* Safari support */
+    border: 1px solid rgba(255, 255, 255, 0.4); /* Subtle glossy edge */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Soft drop shadow for depth */
+    
+    /* Text & Spacing */
+    color: #ffffff; 
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.8); /* Keeps text readable over light photos */
+    padding: 0.35rem 0.85rem;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    border-radius: 20px; /* Pill-shape looks much better with glass effects */
+    letter-spacing: 1px;
+  }
+
+  .sig-card__content {
+    padding: 1.5rem;
+    flex-grow: 1;
+  }
+
+  .sig-card__name {
+    font-size: 1.25rem;
+    color: var(--color-primary);
+    margin-bottom: 0.75rem;
+    font-weight: 700;
+  }
+
+  .sig-card__bio {
+    font-size: 0.95rem;
+    color: var(--color-text-dark);
+    line-height: 1.5;
+    opacity: 0.8;
+  }
+
+  /* Flashbacks Grid */
+  .flashback-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+  }
+
+  .flashback-item {
+    border-radius: 8px;
+    overflow: hidden;
+    aspect-ratio: 4 / 3;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+  }
+
+  .flashback-item__image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+  }
+
+  .flashback-item:hover .flashback-item__image {
+    transform: scale(1.05);
+  }
   
   /* --- Responsive Design --- */
   @media (max-width: 768px) {

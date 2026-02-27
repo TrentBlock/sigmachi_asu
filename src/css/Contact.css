@@ -1,25 +1,67 @@
-/* Contact Form */
-.contact-form-section {
-    padding: 0 0 8rem 0;
+/* --- Global Newsletter Variables --- */
+:root {
+    --color-primary: #003366; /* Sigma Chi Blue */
+    --color-gold: #FFB300;    /* Sigma Chi Gold */
+    --color-text-dark: #1a202c;
+    --color-text-muted: #4a5568;
+    --color-bg-light: #f7fafc;
+    --color-white: #ffffff;
+    --border-light: #e2e8f0;
+    --shadow-card: 0 10px 25px rgba(0, 0, 0, 0.05);
 }
 
-.form-container {
-    max-width: 700px;
+/* --- Section Layout --- */
+.newsletter-section {
+    padding: 6rem 0 8rem 0;
+    background-color: var(--color-bg-light); /* Soft background to make the white form pop */
+    min-height: 80vh;
+    display: flex;
+    align-items: center;
+    font-family: 'Inter', 'Segoe UI', sans-serif;
+}
+
+.newsletter-wrapper {
+    max-width: 650px;
     margin: 0 auto;
     opacity: 0;
     transform: translateY(30px);
 }
 
-.form-container.visible {
+.newsletter-wrapper.visible {
     animation: fadeInUp 0.8s forwards;
 }
 
+/* --- Typography & Header --- */
+.newsletter-header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
 
-.contact-form {
-    background: var(--secondary-color);
-    padding: 3rem;
-    border-radius: 4px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+.newsletter-title {
+    font-family: "EB Garamond", serif;
+    font-size: clamp(3rem, 5vw, 4rem);
+    font-weight: 700;
+    color: var(--color-primary);
+    margin-bottom: 1rem;
+    line-height: 1.1;
+    letter-spacing: -1px;
+}
+
+.newsletter-subtitle {
+    font-size: 1.1rem;
+    color: var(--color-text-muted);
+    line-height: 1.6;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+/* --- The Form Card --- */
+.newsletter-form {
+    background: var(--color-white);
+    padding: 3.5rem;
+    border-radius: 16px;
+    box-shadow: var(--shadow-card);
+    border: 1px solid rgba(0, 0, 0, 0.02);
 }
 
 .form-row {
@@ -33,74 +75,81 @@
     margin-bottom: 1.5rem;
 }
 
-.form-group input,
-.form-group textarea {
+/* --- Premium Labels & Inputs --- */
+.form-group label {
+    display: block;
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: var(--color-text-muted);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 0.5rem;
+}
+
+.form-group input {
     width: 100%;
-    padding: 0.85rem 1rem;
-    font-size: 16px;
-    font-family: "Inter", sans-serif;
-    border: 1px solid #D1D5DB;
-    border-radius: 4px;
-    transition: var(--transition-smooth);
-    background: var(--secondary-color);
-}
-
-.form-group input:focus,
-.form-group textarea:focus {
-    outline: none;
-    border-color: var(--primary-color);
-}
-
-.form-group textarea {
-    resize: vertical;
-}
-
-.submit-btn {
-    width: 100%;
-    padding: 0.85rem;
-    font-size: 16px;
-    font-weight: 500;
-    font-family: "Inter", sans-serif;
-    background: var(--bg-primary);
-    color: var(--secondary-color);
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: var(--transition-smooth);
-    letter-spacing: 0.3px;
-}
-
-.submit-btn:hover {
-    background: var(--primary-color);
-}
-
-.contact-main-title {
-    font-size: 5rem;
-    font-weight: 600;
-    color: var(--text-primary);
-    margin-bottom: 1rem;
-    line-height: 1.1;
-    text-align: left;
-}
-
-.contact-subtitle {
+    padding: 0.85rem 1.25rem;
     font-size: 1rem;
-    color: var(--text-secondary);
-    margin-bottom: 3rem;
-    text-align: left;
+    font-family: "Inter", sans-serif;
+    color: var(--color-text-dark);
+    background-color: var(--color-bg-light);
+    border: 1px solid var(--border-light);
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    box-sizing: border-box;
 }
 
+/* The "High-End" Focus State */
+.form-group input:focus {
+    outline: none;
+    background-color: var(--color-white);
+    border-color: var(--color-primary);
+    box-shadow: 0 0 0 3px rgba(0, 51, 102, 0.1); /* Soft blue halo */
+}
+
+.form-group input::placeholder {
+    color: #a0aec0;
+    font-weight: 400;
+}
+
+/* --- Submit Button --- */
+.newsletter-submit-btn {
+    width: 100%;
+    margin-top: 1rem;
+    padding: 1rem;
+    font-size: 1.1rem;
+    font-weight: 600;
+    font-family: "Inter", sans-serif;
+    background-color: var(--color-primary);
+    color: var(--color-white);
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.newsletter-submit-btn:hover {
+    background-color: #002244;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0, 51, 102, 0.2);
+}
+
+.newsletter-submit-btn:active {
+    transform: translateY(0);
+}
+
+/* --- Responsive Adjustments --- */
 @media (max-width: 768px) {
+    .newsletter-section {
+        padding: 4rem 1rem 6rem 1rem;
+    }
+
     .form-row {
         grid-template-columns: 1fr;
+        gap: 0;
     }
     
-    .contact-form {
-        padding: 2rem;
-    }
-}
-@media (max-width: 480px) {
-    .contact-form {
-        padding: 1.5rem;
+    .newsletter-form {
+        padding: 2.5rem 1.5rem;
     }
 }

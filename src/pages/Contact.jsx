@@ -6,9 +6,7 @@ function Contact() {
         firstName: '',
         lastName: '',
         email: '',
-        phone: '',
-        gradYear: '',
-        message: ''
+        gradYear: ''
     });
 
     const handleChange = (e) => {
@@ -21,56 +19,94 @@ function Contact() {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        console.log('Form submitted:', formData);
-        // Add your form submission logic here
+        console.log('Newsletter subscription submitted:', formData);
+        
+        // Add your form submission/newsletter logic here
+        
+        // Clear the form after submission
         setFormData({
             firstName: '',
             lastName: '',
             email: '',
-            phone: '',
-            gradYear: '',
-            message: ''
+            gradYear: ''
         });
+        
+        // Optional: Add a success toast or message here
+        alert("Thanks for subscribing!"); 
     };
 
     return (
-        <section className="contact-form-section">
-                <div className="container">
-                        <div className="form-container fade-in-up">
-                                <h1 className="contact-main-title">Contact</h1>
-                                <p className="contact-subtitle">Please complete the form below</p>
-                                <form className="contact-form" id="contactForm" onSubmit={handleSubmit}>
-                                        <div className="form-row">
-                                                <div className="form-group">
-                                                        <input type="text" name="firstName" placeholder="First Name" value={formData.firstName} onChange={handleChange} required />
-                                                </div>
-                                                <div className="form-group">
-                                                        <input type="text" name="lastName" placeholder="Last Name" value={formData.lastName} onChange={handleChange} required />
-                                                </div>
-                                        </div>
-                                        
-                                        <div className="form-group">
-                                                <input type="email" name="email" placeholder="Email" value={formData.email} onChange={handleChange} required />
-                                        </div>
-                                        
-                                        <div className="form-group">
-                                                <input type="tel" name="phone" placeholder="Phone Number" value={formData.phone} onChange={handleChange} />
-                                        </div>
-                                        
-                                        <div className="form-group">
-                                                <input type="text" name="gradYear" placeholder="Expected Graduation Year" value={formData.gradYear} onChange={handleChange} />
-                                        </div>
-                                        
-                                        <div className="form-group">
-                                                <textarea name="message" placeholder="Message" rows="6" value={formData.message} onChange={handleChange} required></textarea>
-                                        </div>
-                                        
-                                        <button type="submit" className="submit-btn">Submit</button>
-                                </form>
+        <section className="newsletter-section">
+            <div className="container">
+                <div className="newsletter-wrapper fade-in-up">
+                    
+                    <div className="newsletter-header">
+                        <h1 className="newsletter-title">Stay in the Loop</h1>
+                        <p className="newsletter-subtitle">
+                            Join the Epsilon Upsilon network. Subscribe to receive the latest chapter updates, exclusive alumni event invitations, and brotherhood news.
+                        </p>
+                    </div>
+
+                    <form className="newsletter-form" onSubmit={handleSubmit}>
+                        <div className="form-row">
+                            <div className="form-group">
+                                <label htmlFor="firstName">First Name</label>
+                                <input 
+                                    type="text" 
+                                    id="firstName"
+                                    name="firstName" 
+                                    value={formData.firstName} 
+                                    onChange={handleChange} 
+                                    required 
+                                />
+                            </div>
+                            <div className="form-group">
+                                <label htmlFor="lastName">Last Name</label>
+                                <input 
+                                    type="text" 
+                                    id="lastName"
+                                    name="lastName" 
+                                    value={formData.lastName} 
+                                    onChange={handleChange} 
+                                    required 
+                                />
+                            </div>
                         </div>
+                        
+                        <div className="form-group">
+                            <label htmlFor="email">Email Address</label>
+                            <input 
+                                type="email" 
+                                id="email"
+                                name="email" 
+                                value={formData.email} 
+                                onChange={handleChange} 
+                                required 
+                            />
+                        </div>
+                        
+                        <div className="form-group">
+                            <label htmlFor="gradYear">Graduation Year</label>
+                            <input 
+                                type="text" 
+                                id="gradYear"
+                                name="gradYear" 
+                                placeholder="e.g. 2024"
+                                value={formData.gradYear} 
+                                onChange={handleChange} 
+                                required
+                            />
+                        </div>
+                        
+                        <button type="submit" className="newsletter-submit-btn">
+                            Subscribe
+                        </button>
+                    </form>
+                    
                 </div>
+            </div>
         </section>
-    )
+    );
 }
 
-export default Contact
+export default Contact;

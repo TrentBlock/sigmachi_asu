@@ -11,12 +11,12 @@ function Stats() {
                     <p className="stat-label">Alumni</p>
                 </div>
                 <div className="stat-item fade-in-up visible">
-                    <h3 className="stat-number">1960</h3>
-                    <p className="stat-label">ASU Chapter Established</p>
+                    <h3 className="stat-number">61 Years</h3>
+                    <p className="stat-label">At Arizona State University</p>
                 </div>
                 <div className="stat-item fade-in-up visible">
                     <h3 className="stat-number">3.503</h3>
-                    <p className="stat-label">Average GPA</p>
+                    <p className="stat-label">Current Chapter GPA</p>
                 </div>
             </div>
         </div>

@@ -1,135 +1,194 @@
 /* --- Global Variables --- */
 :root {
-    --color-primary: #003366; /* Sigma Chi Blue */
-    --color-primary-light: #004080;
-    --color-gold: #FFB300;    /* Sigma Chi Gold */
-    --color-text-dark: #2d3748;
-    --color-text-muted: #4a5568;
-    --color-bg-light: #f7fafc;
-    --color-white: #ffffff;
-    --shadow-sm: 0 4px 6px rgba(0, 0, 0, 0.05);
-    --shadow-md: 0 10px 15px rgba(0, 0, 0, 0.1);
+  --color-primary: #003366; /* Sigma Chi Blue */
+  --color-primary-light: #004080;
+  --color-gold: #FFB300;    /* Sigma Chi Gold */
+  --color-text-dark: #2d3748;
+  --color-text-muted: #4a5568;
+  --color-bg-light: #f7fafc;
+  --color-bg-white: #ffffff;
+  --shadow-sm: 0 4px 6px rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 10px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* --- Base Page --- */
+.about-trust-page {
+  background-color: var(--color-bg-light);
+  font-family: 'Inter', 'Segoe UI', sans-serif; /* Clean Sans-Serif for a modern trust page */
+}
+
+/* --- 1. ASU Narrative Section --- */
+.about-narrative {
+  padding: 6rem 2rem 4rem 2rem;
+  background-color: var(--color-bg-white);
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.about-narrative__container {
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.about-narrative__title {
+  font-family: "EB Garamond", serif; /* Elegant Serif for the narrative heading */
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  color: var(--color-primary);
+  margin-bottom: 2rem;
+  line-height: 1.1;
+  letter-spacing: -0.5px;
+}
+
+.about-narrative__content {
+  font-size: 1.15rem;
+  line-height: 1.8;
+  color: var(--color-text-muted);
+  text-align: left;
+}
+
+.about-narrative__content p {
+  margin-bottom: 1.5rem;
+}
+
+/* Optional: Drop cap for the first paragraph to look editorial */
+.about-narrative__content p:first-of-type::first-letter {
+  float: left;
+  font-family: "EB Garamond", serif;
+  font-size: 4rem;
+  line-height: 0.8;
+  padding-top: 4px;
+  padding-right: 8px;
+  padding-left: 3px;
+  color: var(--color-gold);
+}
+
+/* --- 2. Stats Section (Container & Header) --- */
+.about-cards {
+  padding: 5rem 2rem;
+}
+
+.about-cards__header {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto 4rem auto;
+}
+
+.about-cards__heading {
+  font-family: "EB Garamond", serif;
+  font-size: 2.5rem;
+  color: var(--color-primary);
+  margin-bottom: 1rem;
+  letter-spacing: -0.5px;
+}
+
+.about-cards__subheading {
+  font-size: 1.125rem;
+  color: var(--color-text-muted);
+  line-height: 1.6;
+}
+
+/* --- Grid Layout --- */
+.about-cards__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* --- Card Block --- */
+.info-card {
+  background-color: var(--color-bg-white);
+  border-radius: 12px;
+  padding: 2.5rem 2rem;
+  box-shadow: var(--shadow-sm);
+  transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  border-top: 4px solid transparent;
+}
+
+.info-card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-md);
+  border-top-color: var(--color-gold); 
+}
+
+/* --- Card Elements --- */
+.info-card__icon-wrapper {
+  background-color: rgba(0, 51, 102, 0.05); 
+  color: var(--color-primary);
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+  transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
+}
+
+.info-card__icon-wrapper svg {
+  width: 34px;
+  height: 34px;
+}
+
+.info-card:hover .info-card__icon-wrapper {
+  background-color: var(--color-primary);
+  color: var(--color-bg-white);
+  transform: scale(1.1);
+}
+
+.info-card__content {
+  display: flex;
+  flex-direction: column;
+}
+
+.info-card__stat {
+  font-family: "EB Garamond", serif;
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--color-primary);
+  margin-bottom: 0.5rem;
+  line-height: 1;
+}
+
+.info-card__title {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--color-text-dark);
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.info-card__desc {
+  font-size: 1rem;
+  color: var(--color-text-muted);
+  line-height: 1.6;
+}
+
+/* --- Responsive Adjustments --- */
+@media (max-width: 768px) {
+  .about-narrative {
+    padding: 4rem 1.5rem 3rem 1.5rem;
   }
   
-  /* --- Container & Header --- */
+  .about-narrative__content {
+    font-size: 1.05rem;
+  }
+
   .about-cards {
-    padding: 5rem 2rem;
-    background-color: var(--color-bg-light);
-    font-family: "EB Garamond", serif;
-  }
-  
-  .about-cards__header {
-    text-align: center;
-    max-width: 800px;
-    margin: 0 auto 4rem auto;
+    padding: 4rem 1.5rem;
   }
   
   .about-cards__heading {
-    font-size: 2.5rem;
-    color: var(--color-primary);
-    margin-bottom: 1rem;
-    letter-spacing: -0.5px;
-  }
-  
-  .about-cards__subheading {
-    font-size: 1.125rem;
-    color: var(--color-text-muted);
-    line-height: 1.6;
-  }
-  
-  /* --- Grid Layout --- */
-  .about-cards__grid {
-    display: grid;
-    /* Auto-fit creates columns based on the minimum width (300px), expanding to fill space */
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    gap: 2rem;
-    max-width: 1200px;
-    margin: 0 auto;
-  }
-  
-  /* --- Card Block --- */
-  .info-card {
-    background-color: var(--color-white);
-    border-radius: 12px;
-    padding: 2.5rem 2rem;
-    box-shadow: var(--shadow-sm);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    border-top: 4px solid transparent;
-  }
-  
-  .info-card:hover {
-    transform: translateY(-5px);
-    box-shadow: var(--shadow-md);
-    border-top-color: var(--color-gold); /* Adds a nice gold accent on hover */
-  }
-  
-  /* --- Card Elements --- */
-  .info-card__icon-wrapper {
-    background-color: rgba(0, 51, 102, 0.05); /* Very light blue background for the icon */
-    color: var(--color-primary);
-    width: 64px;
-    height: 64px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 1.5rem;
-    transition: background-color 0.3s ease, color 0.3s ease;
-  }
-  
-  .info-card__icon-wrapper svg {
-    width: 32px;
-    height: 32px;
-  }
-  
-  .info-card:hover .info-card__icon-wrapper {
-    background-color: var(--color-primary);
-    color: var(--color-white);
-  }
-  
-  .info-card__content {
-    display: flex;
-    flex-direction: column;
+    font-size: 2rem;
   }
   
   .info-card__stat {
-    font-size: 2.5rem;
-    font-weight: 800;
-    color: var(--color-primary);
-    margin-bottom: 0.5rem;
-    line-height: 1;
+    font-size: 2.25rem;
   }
-  
-  .info-card__title {
-    font-size: 1.25rem;
-    font-weight: 600;
-    color: var(--color-text-dark);
-    margin-bottom: 1rem;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-  }
-  
-  .info-card__desc {
-    font-size: 1rem;
-    color: var(--color-text-muted);
-    line-height: 1.6;
-  }
-  
-  /* --- Responsive Adjustments --- */
-  @media (max-width: 768px) {
-    .about-cards {
-      padding: 4rem 1.5rem;
-    }
-    
-    .about-cards__heading {
-      font-size: 2rem;
-    }
-    
-    .info-card__stat {
-      font-size: 2rem;
-    }
-  }
+}

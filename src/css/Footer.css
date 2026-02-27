@@ -1,6 +1,6 @@
 /* Footer */
 .footer {
-    padding: 3rem 0;
+    padding: 3rem 0 2rem 0; /* Slightly reduced bottom padding */
     background: var(--bg-secondary);
     color: var(--secondary-color);
     text-align: center;
@@ -10,22 +10,22 @@
     display: flex;
     justify-content: center;
     gap: 2rem;
-    margin-bottom: 2rem;
+    margin-bottom: 2.5rem; /* Increased margin to separate from new text */
 
     .email--icon {
-        color: #eee; /* Grey color for email icon */
+        color: #eee;
         width: 2rem;
     }
     .insta--icon {
-        color: #E1306C; /* Instagram icon color */
+        color: #E1306C; 
     }
     .fb--icon{
-        color: #1877F2; /* Facebook icon color */
+        color: #1877F2; 
     }
 }
 
 .social-link {
-    --padding:0.75rem;
+    --padding: 0.75rem;
     color: var(--secondary-color);
     transition: var(--transition-smooth);
     display: inline-flex;
@@ -49,12 +49,52 @@
     height: 24px;
 }
 
-.footer p {
-    margin: 0.5rem 0;
+/* --- New Footer Info Styles --- */
+
+.footer-details {
+    margin-bottom: 2rem;
+    line-height: 1.6;
+    font-size: 0.95rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
 }
 
-.disclaimer {
+.footer-contact a {
+    color: var(--secondary-color); /* Matches the main text color */
+    text-decoration: none;
+    border-bottom: 1px dotted var(--secondary-color);
+    transition: all 0.2s ease;
+}
+
+.footer-contact a:hover {
+    color: var(--accent-color);
+    border-bottom-color: var(--accent-color);
+}
+
+.footer-legal p {
+    margin: 0.5rem 0;
     font-size: 0.85rem;
     opacity: 0.7;
-    margin-top: 1rem;
+}
+
+/* Optional: Side-by-side layout for desktop screens */
+@media (min-width: 768px) {
+    .footer-details {
+        flex-direction: row;
+        justify-content: center;
+        gap: 4rem; /* Adds space between address and contact */
+    }
+    
+    .footer-address {
+        text-align: right;
+        border-right: 1px solid rgba(255, 255, 255, 0.2);
+        padding-right: 4rem;
+    }
+
+    .footer-contact {
+        text-align: left;
+        display: flex;
+        align-items: center;
+    }
 }

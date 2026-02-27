@@ -2,16 +2,32 @@ import React from 'react';
 import "../css/Class.css";
 
 // Importing the images directly
-import heroImg from "../images/IMG_7115.webp"
+import heroImg from "../images/IMG_7115.webp";
 import scrap1 from '../images/IMG_7117.webp';
 import scrap2 from '../images/IMG_7119.webp';
 import scrap3 from '../images/IMG_7120.webp';
-import houseImg from '../images/IMG_7118.webp';
+// import houseImg from '../images/IMG_7118.webp'; // Kept in case you use it for flashbacks
 import oldalum from "../images/oldalum.webp";
 import modernImg from '../images/IMG_7121.webp';
 
+import BarryGoldwater from '../images/sigs/BarryGoldwater.webp';
+import GroverCleveland from '../images/sigs/GroverCleveland.webp';
+import BradPitt from '../images/sigs/BradPitt.webp';
+import JohnWayne from '../images/sigs/JohnWayne.webp';
+import DavidLetterman from '../images/sigs/DavidLetterman.webp';
+import LukeBryan from '../images/sigs/LukeBryan.webp';
+import DrewBrees from '../images/sigs/DrewBrees.webp';
+import MikeDitka from '../images/sigs/MikeDitka.webp';
+
+import FlashBack1 from '../images/flashbacks/IMG_7142.webp';
+import FlashBack2 from '../images/flashbacks/IMG_7143.webp';
+import FlashBack3 from '../images/flashbacks/IMG_7144.webp';
+import FlashBack4 from '../images/flashbacks/IMG_7145.webp';
+import FlashBack5 from '../images/flashbacks/IMG_7146.webp';
+import FlashBack6 from '../images/flashbacks/IMG_7147.webp';
+
 const AlumniPage = () => {
-  // Array of scrapbook images using the imported variables. 
+  // Array of scrapbook images
   const galleryImages = [
     { src: scrap1, alt: "Brothers hanging out" },
     { src: scrap2, alt: "Water fights and horses" },
@@ -19,14 +35,74 @@ const AlumniPage = () => {
     { src: oldalum, alt: "Alumni Next to Car" },
   ];
 
-return (
+  // Data for the Significant Sigs Wall of Fame
+ const significantSigs = [
+    {
+      name: "Barry Goldwater",
+      category: "Politics",
+      bio: "Five-term U.S. Senator from Arizona and 1964 Presidential Candidate. A defining figure in Arizona history.",
+      image: BarryGoldwater
+    },
+    {
+      name: "Grover Cleveland",
+      category: "Politics",
+      bio: "The 22nd and 24th President of the United States. The only president in American history to serve two non-consecutive terms.",
+      image: GroverCleveland
+    },
+    {
+      name: "Brad Pitt",
+      category: "Entertainment",
+      bio: "Two-time Academy Award-winning actor and producer, known for his roles in Fight Club, Once Upon a Time in Hollywood, and Moneyball.",
+      image: BradPitt
+    },
+    {
+      name: "John Wayne",
+      category: "Entertainment",
+      bio: "Academy Award-winning actor and enduring American icon, starring in legendary Westerns like True Grit and The Searchers.",
+      image: JohnWayne
+    },
+    {
+      name: "David Letterman",
+      category: "Entertainment",
+      bio: "Iconic television host and comedian who hosted late-night talk shows for 33 years, redefining the genre.",
+      image: DavidLetterman
+    },
+    {
+      name: "Luke Bryan",
+      category: "Entertainment",
+      bio: "One of the most successful country music artists of the 2010s and 2020s, with dozens of number-one hits.",
+      image: LukeBryan
+    },
+    {
+      name: "Drew Brees",
+      category: "Sports",
+      bio: "Super Bowl XLIV Champion and MVP. One of the most prolific passers in NFL history.",
+      image: DrewBrees
+    },
+    {
+      name: "Mike Ditka",
+      category: "Sports",
+      bio: "Pro Football Hall of Famer. Won Super Bowls as both a player and head coach of the Chicago Bears.",
+      image: MikeDitka
+    }
+  ];
+
+  // Data for Alumni Flashbacks
+  // Replace the placeholder URLs with your imported images when ready
+  const flashbacks = [
+    { src: FlashBack1, alt: "7th Street House" }, // Using the houseImg you already imported
+    { src: FlashBack2, alt: "Vintage Composite Placeholder" },
+    { src: FlashBack3, alt: "Homecoming Event Placeholder" },
+    { src: FlashBack4, alt: "Brotherhood Event Placeholder" },
+    { src: FlashBack5, alt: "Brotherhood Event Placeholder" },
+    { src: FlashBack6, alt: "Brotherhood Event Placeholder" },
+  ];
+
+  return (
     <div className="alumni-page">
         
         {/* 1. Hero Section */}
-        <section 
-            className="alumni-hero" 
-            style={{ backgroundImage: `url(${heroImg})` }}
-        >
+        <section className="alumni-hero" style={{ backgroundImage: `url(${heroImg})` }}>
             <div className="alumni-hero__overlay">
                 <h1 className="alumni-hero__title">Decades of Brotherhood</h1>
                 <p className="alumni-hero__subtitle">
@@ -41,41 +117,54 @@ return (
             <p className="scrapbook-gallery__swipe-indicator">Swipe to view more &rarr;</p>
             <div className="scrapbook-gallery__container">
                 <div className="scrapbook-gallery__track">
-                    {/* Render images twice for the seamless CSS infinite scroll */}
                     {[...galleryImages, ...galleryImages].map((img, index) => (
                         <div className="scrapbook-gallery__item" key={index}>
-                            <img 
-                                src={img.src} 
-                                alt={img.alt} 
-                                className="scrapbook-gallery__image" 
-                            />
+                            <img src={img.src} alt={img.alt} className="scrapbook-gallery__image" />
                         </div>
                     ))}
                 </div>
             </div>
         </section>
 
-        {/* 3. Chapter History Section */}
-        <section className="history-split">
-            <div className="history-split__content">
-                <h2 className="history-split__title">Our Chapter History</h2>
-                <p className="history-split__text">
-                    Since our founding at Arizona State University in 1960, the Sigma Chi chapter has been a cornerstone of campus life. Through the decades, hundreds of young men have passed through our halls, forging bonds that easily outlast their college years. 
-                </p>
-                <p className="history-split__text">
-                    From monumental brotherhoods to philanthropic milestones, our history is written by the brothers who lived it. The traditions we started in the 60s and 70s laid the foundation for the thriving chapter we have today.
-                </p>
+        {/* 3. Wall of Fame Section */}
+        <section className="wall-of-fame">
+            <div className="wall-of-fame__header">
+                <h2 className="wall-of-fame__title">Significant Sigs</h2>
+                <p className="wall-of-fame__subtitle">Our brotherhood spans the nation, counting some of history's most notable leaders, entertainers, and athletes among our ranks.</p>
             </div>
-            <div className="history-split__media">
-                {/* Using the imported houseImg variable */}
-                <img loading='lazy' src={houseImg} alt="Vintage Fraternity House Group" className="history-split__image" />
+            
+            <div className="sig-grid">
+                {significantSigs.map((sig, index) => (
+                    <div className="sig-card" key={index}>
+                        <div className="sig-card__image-wrapper">
+                            <img loading="lazy" src={sig.image} alt={sig.name} className="sig-card__image" />
+                            <span className="sig-card__category">{sig.category}</span>
+                        </div>
+                        <div className="sig-card__content">
+                            <h3 className="sig-card__name">{sig.name}</h3>
+                            <p className="sig-card__bio">{sig.bio}</p>
+                        </div>
+                    </div>
+                ))}
+            </div>
+
+            <div className="wall-of-fame__header" style={{ marginTop: '5rem' }}>
+                <h2 className="wall-of-fame__title">Chapter Flashbacks</h2>
+                <p className="wall-of-fame__subtitle">Moments from the Epsilon Upsilon history books.</p>
+            </div>
+
+            <div className="flashback-grid">
+                {flashbacks.map((item, index) => (
+                    <div className="flashback-item" key={index}>
+                        <img loading="lazy" src={item.src} alt={item.alt} className="flashback-item__image" />
+                    </div>
+                ))}
             </div>
         </section>
 
         {/* 4. Lifelong Bonds & Active Alumni (Present Day) */}
         <section className="alumni-engagement">
             <div className="alumni-engagement__media">
-                {/* Using the imported modernImg variable */}
                 <img loading='lazy' src={modernImg} alt="Sigma Chi Michael F. Haley Memorial Dinner" className="alumni-engagement__image" />
             </div>
             <div className="alumni-engagement__content">
@@ -87,14 +176,14 @@ return (
                     Stay connected, and help us ensure the next generation of brothers receives the same incredible experience we did.
                 </p>
                 <div className="alumni-engagement__actions">
-                    <a href="/contact" className="alumni-engagement__button alumni-engagement__button--primary">Contact Us</a>
+                    <a href="/contact" className="alumni-engagement__button alumni-engagement__button--primary">Stay In The Loop</a>
                     <a href="/donate" className="alumni-engagement__button alumni-engagement__button--secondary">Donate to the Chapter</a>
                 </div>
             </div>
         </section>
 
     </div>
-);
+  );
 };
 
 export default AlumniPage;

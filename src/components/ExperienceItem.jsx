@@ -4,16 +4,26 @@ function ExperienceItem({ title, description }) {
     const [isActive, setIsActive] = useState(false);
 
     return (
-        <div className={`exp-item ${isActive ? 'active' : ''}`}>
-            <div className="exp-item-header"  onClick={() => setIsActive(!isActive)}>
+        <div className={`exp-item ${isActive ? 'active' : ''}`} onClick={() => setIsActive(!isActive)}>
+            <div className="exp-item-header">
                 <h3>{title}</h3>
-                <button 
-                    className="exp-toggle">
-                    +
-                </button>
+                <div className="exp-toggle-icon">
+                    <svg 
+                        viewBox="0 0 24 24" 
+                        fill="none" 
+                        stroke="currentColor" 
+                        strokeWidth="2" 
+                        strokeLinecap="round" 
+                        strokeLinejoin="round"
+                    >
+                        <polyline points="6 9 12 15 18 9"></polyline>
+                    </svg>
+                </div>
             </div>
             <div className="exp-item-content">
-                <p>{description}</p>
+                <div className="exp-item-inner">
+                    <p>{description}</p>
+                </div>
             </div>
         </div>
     );
