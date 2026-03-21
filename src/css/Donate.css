@@ -202,4 +202,7 @@
         width: 150px;
         height: 150px;
     }
+    .donate-method-card:first-of-type {
+        grid-column-start: span 1;
+    }
 }
