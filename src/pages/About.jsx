@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import '../css/About.css';
 
 // Custom Hook for Animated Counters
-const AnimatedCounter = ({ value, prefix = '', suffix = '', duration = 2000 }) => {
+const AnimatedCounter = ({ value, prefix = '', suffix = '', duration = 2000, useCommas=true }) => {
   const [count, setCount] = useState(0);
   const [isVisible, setIsVisible] = useState(false);
   const counterRef = useRef(null);
@@ -50,7 +50,7 @@ const AnimatedCounter = ({ value, prefix = '', suffix = '', duration = 2000 }) =
 
   return (
     <span ref={counterRef}>
-      {prefix}{count.toLocaleString()}{suffix}
+      {prefix}{useCommas ? count.toLocaleString() : count}{suffix}
     </span>
   );
 };
@@ -78,7 +78,7 @@ const About = () => {
           <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
         </svg>
       ),
-      num: 380000, prefix: "", suffix: "+",
+      num: 377000, prefix: "", suffix: "+",
       title: "Lifetime Initiates",
       desc: "Total lifetime initiates globally, forming an unparalleled network of lifelong support."
     },
@@ -101,9 +101,22 @@ const About = () => {
           <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
         </svg>
       ),
-      num: 31, prefix: "$", suffix: " Million",
-      title: "Historic Pledge",
-      desc: "Our record-breaking commitment to the new Sigma Chi Center for Advanced Therapeutics."
+      num: 15000, prefix: "", suffix: "+",
+      title: "Current Actives",
+      desc: "Annual philanthropic contributions from active chapters, fueling impactful initiatives nationwide."
+    },
+    {
+      id:5,
+      icon: (
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+  <circle cx="12" cy="12" r="10"></circle>
+  <line x1="2" y1="12" x2="22" y2="12"></line>
+  <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+</svg>
+      ),
+      num: "1855", prefix: "", suffix: "",
+      title: "Founded at Miami(OH) University", 
+      desc: "Annual philanthropic contributions from active chapters, fueling impactful initiatives nationwide."
     }
   ];
 
@@ -113,14 +126,15 @@ const About = () => {
       {/* 1. ASU Narrative Section */}
       <div className="about-narrative">
         <div className="about-narrative__container">
-            <h1 className="about-narrative__title">From 7th Street to 601 Alpha</h1>
+            <h1 className="about-narrative__title">The Legacy of the Epsilon Upsilon Chapter            </h1>
             <div className="about-narrative__content">
                 <p>
-                    The story of the Epsilon Upsilon chapter is one of resilience, unwavering brotherhood, and a relentless pursuit of excellence. From our humble beginnings in the 1960s on 7th Street to establishing our permanent, state-of-the-art home at 601 Alpha Drive in the heart of the Greek Leadership Village, our physical journey mirrors our growth at Arizona State University.
+                Our story began at the site known today as the Governor Benjamin Mouer House, which served as the foundational home base for our Brotherhood. Initially organized as a colony under the designation Sigma Chi Sigma, the dedicated gentlemen of that era worked tirelessly through the late 1950s to secure our place within the National Fraternity. Through their resolve, they laid the cornerstone for what would become a pillar of excellence at Arizona State University.
                 </p>
                 <p>
-                    Through decades of immense change, we have maintained an unbroken chain of values-based leadership. We don't just recruit students; we forge lifelong bonds. The legacy built by the generations of brothers before us continues to shape the character of our campus, our community, and the men who proudly wear the White Cross today.
+                Following our successful chartering, the chapter transitioned to the monumental 606 E Alpha Drive. It was within those walls that the Epsilon Upsilon Chapter truly came into its own. For decades, 606 E Alpha Drive served as the backdrop for our most cherished traditions a place where lasting memories were forged, leaders of men were shaped and grew into brothers of character.
                 </p>
+                <p>Beyond our internal bond, the Epsilon Chapter remains a force for good within the Tempe community. Through expansive philanthropy and a commitment to service, we work to better our surroundings and humanity as a whole. From the halls of Alpha Drive to our current endeavors, we remain steadfast in the Jordan Standard. Rooted in Friendship, Justice, and Learning, the gentlemen of Sigma Chi continue to attract leaders of men who live our Creed ensuring our legacy of excellence remains respected for generations to come.</p>
             </div>
         </div>
       </div>
@@ -148,6 +162,7 @@ const About = () => {
                       prefix={card.prefix} 
                       suffix={card.suffix} 
                       duration={2500} 
+                      useCommas={card.id !== 5} // Don't use commas for the founding year
                     />
                 </span>
                 <h3 className="info-card__title">{card.title}</h3>

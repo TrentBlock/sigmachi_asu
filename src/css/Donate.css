@@ -70,7 +70,9 @@
     flex-direction: column;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
-
+.donate-method-card:first-of-type {
+    grid-column-start: span 2;
+}
 .donate-method-card:hover {
     transform: translateY(-5px);
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);

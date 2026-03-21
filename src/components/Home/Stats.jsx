@@ -16,7 +16,7 @@ function Stats() {
                 </div>
                 <div className="stat-item fade-in-up visible">
                     <h3 className="stat-number">3.503</h3>
-                    <p className="stat-label">Current Chapter GPA</p>
+                    <p className="stat-label">Current Chapter GPA <span style={{paddingInline:"0.25rem"}}>·</span> #1 in IFC</p>
                 </div>
             </div>
         </div>

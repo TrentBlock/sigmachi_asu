@@ -1,100 +1,166 @@
-/* Footer */
+/* --- Base Footer --- */
 .footer {
-    padding: 3rem 0 2rem 0; /* Slightly reduced bottom padding */
-    background: var(--bg-secondary);
-    color: var(--secondary-color);
-    text-align: center;
+    padding: 5rem 0 2rem 0; /* Extra top padding gives it breathing room */
+    background: var(--bg-secondary, #001f3f); /* Fallback to a dark blue if variable fails */
+    color: var(--secondary-color, #ffffff);
+    font-family: 'Inter', 'Segoe UI', sans-serif;
 }
 
-.footer-social {
-    display: flex;
-    justify-content: center;
-    gap: 2rem;
-    margin-bottom: 2.5rem; /* Increased margin to separate from new text */
-
-    .email--icon {
-        color: #eee;
-        width: 2rem;
-    }
-    .insta--icon {
-        color: #E1306C; 
-    }
-    .fb--icon{
-        color: #1877F2; 
-    }
+/* --- Multi-Column Grid Layout --- */
+.footer-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr 1fr; /* Middle column gets slightly more space */
+    gap: 3rem;
+    margin-bottom: 4rem;
+    align-items: start;
 }
 
-.social-link {
-    --padding: 0.75rem;
-    color: var(--secondary-color);
-    transition: var(--transition-smooth);
-    display: inline-flex;
-    align-items: center;
-    gap: 0.75rem;
-    padding: var(--padding) calc(var(--padding) * 3);
-    border: 2px solid var(--secondary-color);
-    border-radius: 0.5rem;
-    text-decoration: none;
-    font-weight: 500;
-}
-
-.social-link:hover {
-    color: var(--accent-color);
-    border-color: var(--accent-color);
-    transform: translateY(-2px);
-}
-
-.social-link svg {
-    width: 24px;
-    height: 24px;
-}
-
-/* --- New Footer Info Styles --- */
-
-.footer-details {
-    margin-bottom: 2rem;
-    line-height: 1.6;
-    font-size: 0.95rem;
+/* --- Column 1: Brand & Crest --- */
+.footer-brand {
     display: flex;
     flex-direction: column;
-    gap: 1.5rem;
+    align-items: flex-start;
 }
 
-.footer-contact a {
-    color: var(--secondary-color); /* Matches the main text color */
+.footer-crest {
+    width: 110px; /* Adjust size based on your specific image */
+    height: auto;
+    margin-bottom: 1.5rem;
+    filter: drop-shadow(0 4px 6px rgba(0,0,0,0.3)); /* Makes the crest pop */
+}
+
+.footer-chapter {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin: 0 0 0.25rem 0;
+    font-family: "EB Garamond", serif;
+    color: var(--color-gold, #FFB300);
+}
+
+.footer-motto {
+    font-size: 1rem;
+    margin: 0;
+    opacity: 0.8;
+}
+
+/* --- Column 2: Contact Info --- */
+.footer-heading {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin: 0 0 1.5rem 0;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--color-gold, #FFB300);
+}
+
+.footer-contact-info {
+    font-size: 0.95rem;
+    line-height: 1.8;
+}
+
+.footer-address {
+    font-style: normal;
+    margin-bottom: 1.5rem;
+    opacity: 0.9;
+}
+
+.footer-email a {
+    color: var(--secondary-color, #ffffff);
     text-decoration: none;
-    border-bottom: 1px dotted var(--secondary-color);
+    border-bottom: 1px dotted rgba(255, 255, 255, 0.5);
     transition: all 0.2s ease;
 }
 
-.footer-contact a:hover {
-    color: var(--accent-color);
-    border-bottom-color: var(--accent-color);
+.footer-email a:hover {
+    color: var(--color-gold, #FFB300);
+    border-bottom-color: var(--color-gold, #FFB300);
 }
 
-.footer-legal p {
-    margin: 0.5rem 0;
+/* --- Column 3: Social Links --- */
+.footer-social {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.social-link {
+    --padding: 0.6rem;
+    color: var(--secondary-color, #ffffff);
+    transition: var(--transition-smooth, all 0.3s ease);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: var(--padding);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 50%; /* Changed from rounded squares to modern circles */
+    text-decoration: none;
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
+.social-link svg {
+    width: 20px;
+    height: 20px;
+}
+
+.social-link:hover {
+    background-color: var(--color-gold, #FFB300);
+    border-color: var(--color-gold, #FFB300);
+    color: #001f3f; /* Dark background on hover for contrast */
+    transform: translateY(-3px);
+    box-shadow: 0 4px 12px rgba(255, 179, 0, 0.2);
+}
+
+/* Maintain original icon colors if you prefer them over the gold hover effect */
+.email--icon, .insta--icon, .fb--icon {
+    transition: color 0.3s ease;
+}
+
+/* --- Legal Bottom Bar --- */
+.footer-bottom {
+    text-align: center;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.footer-bottom p {
+    margin: 0;
     font-size: 0.85rem;
-    opacity: 0.7;
+    opacity: 0.6;
 }
 
-/* Optional: Side-by-side layout for desktop screens */
-@media (min-width: 768px) {
-    .footer-details {
-        flex-direction: row;
-        justify-content: center;
-        gap: 4rem; /* Adds space between address and contact */
+/* --- Responsive Design --- */
+@media (max-width: 992px) {
+    .footer-grid {
+        grid-template-columns: 1fr 1fr; /* 2 columns on tablets */
     }
     
-    .footer-address {
-        text-align: right;
-        border-right: 1px solid rgba(255, 255, 255, 0.2);
-        padding-right: 4rem;
+    .footer-brand {
+        grid-column: span 2; /* Crest takes full top row */
+        align-items: center;
+        text-align: center;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        padding-bottom: 2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .footer {
+        padding: 4rem 0 2rem 0;
     }
 
-    .footer-contact {
-        text-align: left;
-        display: flex;
-        align-items: center;
+    .footer-grid {
+        grid-template-columns: 1fr; /* 1 column on mobile */
+        gap: 2.5rem;
+        text-align: center;
+    }
+    
+    .footer-brand {
+        grid-column: span 1;
+        border-bottom: none;
+        padding-bottom: 0;
+    }
+
+    .footer-social {
+        justify-content: center;
     }
 }

@@ -43,7 +43,7 @@ function Contact() {
                     <div className="newsletter-header">
                         <h1 className="newsletter-title">Stay in the Loop</h1>
                         <p className="newsletter-subtitle">
-                            Join the Epsilon Upsilon network. Subscribe to receive the latest chapter updates, exclusive alumni event invitations, and brotherhood news.
+                            Sign up with your email address to receive a semester newsletter and updates on alumni events.
                         </p>
                     </div>
 
@@ -86,12 +86,12 @@ function Contact() {
                         </div>
                         
                         <div className="form-group">
-                            <label htmlFor="gradYear">Graduation Year</label>
+                            <label htmlFor="gradYear">Pledge Class</label>
                             <input 
                                 type="text" 
                                 id="gradYear"
                                 name="gradYear" 
-                                placeholder="e.g. 2024"
+                                placeholder="e.g. Epsilon Upsilon 2025"
                                 value={formData.gradYear} 
                                 onChange={handleChange} 
                                 required

@@ -8,7 +8,7 @@ import scrap2 from '../images/IMG_7119.webp';
 import scrap3 from '../images/IMG_7120.webp';
 // import houseImg from '../images/IMG_7118.webp'; // Kept in case you use it for flashbacks
 import oldalum from "../images/oldalum.webp";
-import modernImg from '../images/IMG_7121.webp';
+// import modernImg from '../images/IMG_7121.webp';
 
 import BarryGoldwater from '../images/sigs/BarryGoldwater.webp';
 import GroverCleveland from '../images/sigs/GroverCleveland.webp';
@@ -26,6 +26,10 @@ import FlashBack4 from '../images/flashbacks/IMG_7145.webp';
 import FlashBack5 from '../images/flashbacks/IMG_7146.webp';
 import FlashBack6 from '../images/flashbacks/IMG_7147.webp';
 
+import flash1 from '../images/flashbacks/flash1.webp';
+import flash2 from '../images/flashbacks/flash2.webp';
+import flash3 from '../images/flashbacks/flash3.webp';
+
 const AlumniPage = () => {
   // Array of scrapbook images
   const galleryImages = [
@@ -33,69 +37,75 @@ const AlumniPage = () => {
     { src: scrap2, alt: "Water fights and horses" },
     { src: scrap3, alt: "Formal events" },
     { src: oldalum, alt: "Alumni Next to Car" },
+    // {src: flash1, alt: "Historical Chapter Moment"},
+    //     {src: flash2, alt: "Historical Chapter Moment"},
+    //     {src: flash3, alt: "Historical Chapter Moment"},
   ];
 
   // Data for the Significant Sigs Wall of Fame
- const significantSigs = [
-    {
-      name: "Barry Goldwater",
-      category: "Politics",
-      bio: "Five-term U.S. Senator from Arizona and 1964 Presidential Candidate. A defining figure in Arizona history.",
-      image: BarryGoldwater
-    },
-    {
-      name: "Grover Cleveland",
-      category: "Politics",
-      bio: "The 22nd and 24th President of the United States. The only president in American history to serve two non-consecutive terms.",
-      image: GroverCleveland
-    },
-    {
-      name: "Brad Pitt",
-      category: "Entertainment",
-      bio: "Two-time Academy Award-winning actor and producer, known for his roles in Fight Club, Once Upon a Time in Hollywood, and Moneyball.",
-      image: BradPitt
-    },
-    {
-      name: "John Wayne",
-      category: "Entertainment",
-      bio: "Academy Award-winning actor and enduring American icon, starring in legendary Westerns like True Grit and The Searchers.",
-      image: JohnWayne
-    },
-    {
-      name: "David Letterman",
-      category: "Entertainment",
-      bio: "Iconic television host and comedian who hosted late-night talk shows for 33 years, redefining the genre.",
-      image: DavidLetterman
-    },
-    {
-      name: "Luke Bryan",
-      category: "Entertainment",
-      bio: "One of the most successful country music artists of the 2010s and 2020s, with dozens of number-one hits.",
-      image: LukeBryan
-    },
-    {
-      name: "Drew Brees",
-      category: "Sports",
-      bio: "Super Bowl XLIV Champion and MVP. One of the most prolific passers in NFL history.",
-      image: DrewBrees
-    },
-    {
-      name: "Mike Ditka",
-      category: "Sports",
-      bio: "Pro Football Hall of Famer. Won Super Bowls as both a player and head coach of the Chicago Bears.",
-      image: MikeDitka
-    }
-  ];
+//  const significantSigs = [
+//     {
+//       name: "Barry Goldwater",
+//       category: "Politics",
+//       bio: "Five-term U.S. Senator from Arizona and 1964 Presidential Candidate. A defining figure in Arizona history.",
+//       image: BarryGoldwater
+//     },
+//     {
+//       name: "Grover Cleveland",
+//       category: "Politics",
+//       bio: "The 22nd and 24th President of the United States. The only president in American history to serve two non-consecutive terms.",
+//       image: GroverCleveland
+//     },
+//     {
+//       name: "Brad Pitt",
+//       category: "Entertainment",
+//       bio: "Two-time Academy Award-winning actor and producer, known for his roles in Fight Club, Once Upon a Time in Hollywood, and Moneyball.",
+//       image: BradPitt
+//     },
+//     {
+//       name: "John Wayne",
+//       category: "Entertainment",
+//       bio: "Academy Award-winning actor and enduring American icon, starring in legendary Westerns like True Grit and The Searchers.",
+//       image: JohnWayne
+//     },
+//     {
+//       name: "David Letterman",
+//       category: "Entertainment",
+//       bio: "Iconic television host and comedian who hosted late-night talk shows for 33 years, redefining the genre.",
+//       image: DavidLetterman
+//     },
+//     {
+//       name: "Luke Bryan",
+//       category: "Entertainment",
+//       bio: "One of the most successful country music artists of the 2010s and 2020s, with dozens of number-one hits.",
+//       image: LukeBryan
+//     },
+//     {
+//       name: "Drew Brees",
+//       category: "Sports",
+//       bio: "Super Bowl XLIV Champion and MVP. One of the most prolific passers in NFL history.",
+//       image: DrewBrees
+//     },
+//     {
+//       name: "Mike Ditka",
+//       category: "Sports",
+//       bio: "Pro Football Hall of Famer. Won Super Bowls as both a player and head coach of the Chicago Bears.",
+//       image: MikeDitka
+//     }
+//   ];
 
   // Data for Alumni Flashbacks
   // Replace the placeholder URLs with your imported images when ready
   const flashbacks = [
-    { src: FlashBack1, alt: "7th Street House" }, // Using the houseImg you already imported
-    { src: FlashBack2, alt: "Vintage Composite Placeholder" },
-    { src: FlashBack3, alt: "Homecoming Event Placeholder" },
-    { src: FlashBack4, alt: "Brotherhood Event Placeholder" },
-    { src: FlashBack5, alt: "Brotherhood Event Placeholder" },
-    { src: FlashBack6, alt: "Brotherhood Event Placeholder" },
+    { src: flash1, alt: "Historical Chapter Moment" },
+    { src: FlashBack1, alt: "Vintage House" },
+    { src: FlashBack2, alt: "Pool Area" },
+    { src: flash2, alt: "Historical Chapter Moment" },
+    { src: FlashBack3, alt: "Skateboarding at the House" },
+    { src: FlashBack4, alt: "Old House Front" },
+    { src: flash3, alt: "Historical Chapter Moment" },
+    { src: FlashBack5, alt: "House Exterior" },
+    { src: FlashBack6, alt: "A Mountain View" },
   ];
 
   return (
@@ -104,7 +114,7 @@ const AlumniPage = () => {
         {/* 1. Hero Section */}
         <section className="alumni-hero" style={{ backgroundImage: `url(${heroImg})` }}>
             <div className="alumni-hero__overlay">
-                <h1 className="alumni-hero__title">Decades of Brotherhood</h1>
+                <h1 className="alumni-hero__title">From 34 E, 7th Street to the Plex</h1>
                 <p className="alumni-hero__subtitle">
                     Honoring our roots, celebrating lifelong bonds, and preserving the traditions that built us.
                 </p>
@@ -128,12 +138,12 @@ const AlumniPage = () => {
 
         {/* 3. Wall of Fame Section */}
         <section className="wall-of-fame">
-            <div className="wall-of-fame__header">
+            {/* <div className="wall-of-fame__header">
                 <h2 className="wall-of-fame__title">Significant Sigs</h2>
                 <p className="wall-of-fame__subtitle">Our brotherhood spans the nation, counting some of history's most notable leaders, entertainers, and athletes among our ranks.</p>
-            </div>
+            </div> */}
             
-            <div className="sig-grid">
+            {/* <div className="sig-grid">
                 {significantSigs.map((sig, index) => (
                     <div className="sig-card" key={index}>
                         <div className="sig-card__image-wrapper">
@@ -146,24 +156,30 @@ const AlumniPage = () => {
                         </div>
                     </div>
                 ))}
-            </div>
+            </div> */}
 
-            <div className="wall-of-fame__header" style={{ marginTop: '5rem' }}>
-                <h2 className="wall-of-fame__title">Chapter Flashbacks</h2>
-                <p className="wall-of-fame__subtitle">Moments from the Epsilon Upsilon history books.</p>
-            </div>
+          {/* --- NEW: Standalone Flashbacks Section --- */}
+        <section className="flashbacks-section">
+            <div className="container">
+                <div className="flashbacks-header">
+                    <h2 className="flashbacks-title">Chapter Flashbacks</h2>
+                    <p className="flashbacks-subtitle">Moments from the Epsilon Upsilon history books.</p>
+                </div>
 
-            <div className="flashback-grid">
-                {flashbacks.map((item, index) => (
-                    <div className="flashback-item" key={index}>
-                        <img loading="lazy" src={item.src} alt={item.alt} className="flashback-item__image" />
-                    </div>
-                ))}
+                <div className="flashbacks-masonry">
+                    {flashbacks.map((item, index) => (
+                        <div className="flashback-masonry-item" key={index}>
+                            <img loading="lazy" src={item.src} alt={item.alt} className="flashback-masonry-img" />
+                        </div>
+                    ))}
+                </div>
             </div>
         </section>
 
+        </section>
+
         {/* 4. Lifelong Bonds & Active Alumni (Present Day) */}
-        <section className="alumni-engagement">
+        {/* <section className="alumni-engagement">
             <div className="alumni-engagement__media">
                 <img loading='lazy' src={modernImg} alt="Sigma Chi Michael F. Haley Memorial Dinner" className="alumni-engagement__image" />
             </div>
@@ -180,7 +196,7 @@ const AlumniPage = () => {
                     <a href="/donate" className="alumni-engagement__button alumni-engagement__button--secondary">Donate to the Chapter</a>
                 </div>
             </div>
-        </section>
+        </section> */}
 
     </div>
   );

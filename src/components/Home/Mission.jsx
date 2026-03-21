@@ -9,8 +9,9 @@ function Mission() {
             <div className="mission-content fade-in-up">
                 <h3 className="section-label">Overview</h3>
                 <h2 className="mission-text">
-                  Established in 1960, the gentlemen of Sigma Chi at Arizona State University have built a legacy rooted in friendship, justice, and learning. For over six decades, the Epsilon Upsilon Chapter has remained committed to the betterment of character, campus, and community. Through impactful philanthropy, academic excellence, and a lifelong bond of brotherhood, we strive to shape leaders of men who make a difference far beyond their college years.
+                The confidence of the Founders of Sigma Chi was based upon a belief that the principles which they professed and the ideal of the Fraternity which they sought to realize were such as to appeal to the hearts of men and women everywhere. 
                 </h2>
+                <h2 className="mission-text">The Creed of Sigma Chi </h2>
                 {/* <div className="motto">
                     <p className="motto-latin">"In Hoc Signo Vinces"</p>
                     <p className="motto-english">In this sign you will conquer</p>
