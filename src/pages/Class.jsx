@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router';
 import "../css/Class.css";
 
 // Importing the images directly
@@ -32,15 +33,15 @@ import flash3 from '../images/flashbacks/flash3.webp';
 
 const AlumniPage = () => {
   // Array of scrapbook images
-  const galleryImages = [
-    { src: scrap1, alt: "Brothers hanging out" },
-    { src: scrap2, alt: "Water fights and horses" },
-    { src: scrap3, alt: "Formal events" },
-    { src: oldalum, alt: "Alumni Next to Car" },
-    // {src: flash1, alt: "Historical Chapter Moment"},
-    //     {src: flash2, alt: "Historical Chapter Moment"},
-    //     {src: flash3, alt: "Historical Chapter Moment"},
-  ];
+//   const galleryImages = [
+//     { src: scrap1, alt: "Brothers hanging out" },
+//     { src: scrap2, alt: "Water fights and horses" },
+//     { src: scrap3, alt: "Formal events" },
+//     { src: oldalum, alt: "Alumni Next to Car" },
+//     // {src: flash1, alt: "Historical Chapter Moment"},
+//     //     {src: flash2, alt: "Historical Chapter Moment"},
+//     //     {src: flash3, alt: "Historical Chapter Moment"},
+//   ];
 
   // Data for the Significant Sigs Wall of Fame
 //  const significantSigs = [
@@ -106,6 +107,10 @@ const AlumniPage = () => {
     { src: flash3, alt: "Historical Chapter Moment" },
     { src: FlashBack5, alt: "House Exterior" },
     { src: FlashBack6, alt: "A Mountain View" },
+     { src: scrap1, alt: "Brothers hanging out" },
+    { src: scrap2, alt: "Water fights and horses" },
+    { src: scrap3, alt: "Formal events" },
+    { src: oldalum, alt: "Alumni Next to Car" },
   ];
 
   return (
@@ -114,15 +119,15 @@ const AlumniPage = () => {
         {/* 1. Hero Section */}
         <section className="alumni-hero" style={{ backgroundImage: `url(${heroImg})` }}>
             <div className="alumni-hero__overlay">
-                <h1 className="alumni-hero__title">From 34 E, 7th Street to the Plex</h1>
+                <h1 className="alumni-hero__title">From 606 E Alpha Drive, to the Plex</h1>
                 <p className="alumni-hero__subtitle">
-                    Honoring our roots, celebrating lifelong bonds, and preserving the traditions that built us.
+                     With more than 300,000 Alumni worldwide and over 2,000 from this chapter at Arizona State University our legacy spans across presidents, football coaches, artists, and leaders across every field.
                 </p>
             </div>
         </section>
 
         {/* 2. Auto-Scrolling Scrapbook Gallery */}
-        <section className="scrapbook-gallery">
+        {/* <section className="scrapbook-gallery">
             <h2 className="scrapbook-gallery__title">From the Archives</h2>
             <p className="scrapbook-gallery__swipe-indicator">Swipe to view more &rarr;</p>
             <div className="scrapbook-gallery__container">
@@ -134,7 +139,7 @@ const AlumniPage = () => {
                     ))}
                 </div>
             </div>
-        </section>
+        </section> */}
 
         {/* 3. Wall of Fame Section */}
         <section className="wall-of-fame">
@@ -175,7 +180,22 @@ const AlumniPage = () => {
                 </div>
             </div>
         </section>
-
+<section className="alumni-cta-section">
+            <div className="container">
+                <div className="alumni-cta-card">
+                    <h2 className="alumni-cta-title">Participate in Our Network</h2>
+                    <p className="alumni-cta-desc">
+                        Sign up with your email address to receieve newsletters and updates on alumni events.
+                    </p>
+                    
+                    {/* The same button from before, now inside the card */}
+                    <Link to="/contact" className="flashbacks-btn flashbacks-btn--primary">
+                        <span className="btn-text">Stay Connected</span>
+                        <span className="btn-arrow">&rarr;</span>
+                    </Link>
+                </div>
+            </div>
+        </section>
         </section>
 
         {/* 4. Lifelong Bonds & Active Alumni (Present Day) */}

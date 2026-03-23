@@ -7,11 +7,11 @@ function Mission() {
       <section className="mission-section" id="about">
         <div className="container">
             <div className="mission-content fade-in-up">
-                <h3 className="section-label">Overview</h3>
+                <h3 className="section-label">The Creed of Sigma Chi </h3>
                 <h2 className="mission-text">
                 The confidence of the Founders of Sigma Chi was based upon a belief that the principles which they professed and the ideal of the Fraternity which they sought to realize were such as to appeal to the hearts of men and women everywhere. 
                 </h2>
-                <h2 className="mission-text">The Creed of Sigma Chi </h2>
+                {/* <h2 className="mission-text"></h2> */}
                 {/* <div className="motto">
                     <p className="motto-latin">"In Hoc Signo Vinces"</p>
                     <p className="motto-english">In this sign you will conquer</p>

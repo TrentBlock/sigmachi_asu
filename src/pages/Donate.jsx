@@ -9,7 +9,7 @@ function Donate() {
             {/* Header & Mission Section */}
             <div className="donate-block fade-in-up">  
                 <h1 className="donate-main-title">Donate Now</h1>  
-                <h2 className="donate-subtitle">Reestablish the Epsilon Upsilon Legacy </h2>  
+                <h2 className="donate-subtitle">Help Us Reestablish the Epsilon Upsilon Legacy </h2>  
                 <p className="donate-mission-text">
                 Following the revocation of our charter in 2021, we have now began the rigorous journey to re-establish Sigma Chi at Arizona State University. Your contribution directly supports these rechartering efforts, funding the essential operations and recruitment needed to build a strong, sustainable presence on campus. Help us return and continue the unbeatable Epsilon Upsilon legacy.
                 </p>
@@ -61,7 +61,7 @@ function Donate() {
                             <span>Venmo QR</span>
                         </div>
                     </div> */}
-                    <p>For information regarding larger contributions or alternative ways to support our rechartering, please contact our Quaestor at: <strong>finance@sigmachiasu.org</strong></p>
+                    
                 </div>
 
                 {/* Physical Check */}
@@ -81,8 +81,12 @@ function Donate() {
                         PO Box 873008<br/>
                         Tempe, AZ 85281
                     </div>
-                    <p className="donate-tax-note"><em>* A tax receipt will be mailed to the return address provided.</em></p>
+                    {/* <p className="donate-tax-note"><em>* A tax receipt will be mailed to the return address provided.</em></p> */}
                 </div>
+                <div className="donate-method-card">
+                    <p>For information regarding larger contributions or alternative ways to support our rechartering, please contact our Quaestor at: <strong>finance@sigmachiasu.org</strong></p>
+                </div>
+                
 
             </div>
         </div>

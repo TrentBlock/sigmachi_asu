@@ -389,6 +389,132 @@
 .flashback-masonry-item:hover .flashback-masonry-img {
   transform: scale(1.05); /* Premium, slow zoom on hover */
 }
+/* --- Chapter Flashbacks Button --- */
+.flashbacks-action {
+    text-align: center;
+    margin-top: 4rem; /* Adds breathing room between the photos and the button */
+}
+
+.flashbacks-btn {
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    padding: 0.85rem 2.5rem;
+    font-size: 1.1rem;
+    font-weight: 600;
+    font-family: 'Inter', 'Segoe UI', sans-serif;
+    text-decoration: none;
+    border-radius: 6px;
+    
+    /* Animates the lift, text color switch, and border */
+    transition: color 0.4s ease, border-color 0.4s ease, transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease;
+    
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* The Sweeping Background */
+.flashbacks-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0%;
+    height: 100%;
+    z-index: -1;
+    transition: width 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.flashbacks-btn:hover::before {
+    width: 100%;
+}
+
+/* Dynamic Arrow Styles */
+.flashbacks-btn .btn-arrow {
+    display: inline-block;
+    margin-left: 0.6rem;
+    font-size: 1.25rem;
+    line-height: 1;
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.flashbacks-btn:hover .btn-arrow {
+    transform: translateX(6px) scale(1.15);
+}
+
+/* Primary Button Colors (Blue to Gold) */
+.flashbacks-btn--primary {
+    background-color: var(--color-primary, #003366);
+    color: #ffffff;
+    border: 2px solid var(--color-primary, #003366);
+}
+
+.flashbacks-btn--primary::before {
+    background-color: var(--color-gold, #FFB300);
+}
+
+.flashbacks-btn--primary:hover {
+    color: var(--color-primary, #003366); /* Text switches to Blue so it reads well on Gold */
+    border-color: var(--color-gold, #FFB300);
+    transform: translateY(-4px);
+    box-shadow: 0 8px 20px rgba(255, 179, 0, 0.25);
+}
+/* --- Stay Connected CTA Card --- */
+.alumni-cta-section {
+    padding: 2rem 0 8rem 0; /* Creates space between the flashbacks and the card */
+    background-color: var(--color-background-alt, #f7fafc); 
+}
+
+.alumni-cta-card {
+    background-color: #ffffff; /* The clean white section you requested */
+    border-radius: 16px;
+    padding: 4rem 2rem;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04); /* Soft, premium shadow */
+    border: 1px solid rgba(0, 0, 0, 0.03);
+    max-width: 800px;
+    margin: 0 auto;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.alumni-cta-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
+}
+
+.alumni-cta-title {
+    font-size: 2.25rem;
+    color: var(--color-primary, #003366);
+    margin-bottom: 1rem;
+    font-family: "EB Garamond", serif;
+    letter-spacing: -0.5px;
+}
+
+.alumni-cta-desc {
+    font-size: 1.1rem;
+    color: var(--text-secondary, #4a5568);
+    margin-bottom: 2.5rem;
+    max-width: 550px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.7;
+}
+
+/* --- Responsive Adjustments for CTA --- */
+@media (max-width: 768px) {
+    .alumni-cta-section {
+        padding: 0rem 0 5rem 0;
+    }
+    
+    .alumni-cta-card {
+        padding: 3rem 1.5rem;
+    }
+    
+    .alumni-cta-title {
+        font-size: 1.8rem;
+    }
+}
 
 /* --- Responsive Breakpoints --- */
 @media (max-width: 992px) {

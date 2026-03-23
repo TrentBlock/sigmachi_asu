@@ -103,7 +103,7 @@ const About = () => {
       ),
       num: 15000, prefix: "", suffix: "+",
       title: "Current Actives",
-      desc: "Annual philanthropic contributions from active chapters, fueling impactful initiatives nationwide."
+      desc: "Active members across chapters nationwide, driving meaningful impact each year."
     },
     {
       id:5,
@@ -115,8 +115,8 @@ const About = () => {
 </svg>
       ),
       num: "1855", prefix: "", suffix: "",
-      title: "Founded at Miami(OH) University", 
-      desc: "Annual philanthropic contributions from active chapters, fueling impactful initiatives nationwide."
+      title: "Founding Date", 
+      desc: "On June 28th, 1855, at Miami University in Ohio, the Sigma Chi Fraternity was founded."
     }
   ];
 
@@ -134,7 +134,7 @@ const About = () => {
                 <p>
                 Following our successful chartering, the chapter transitioned to the monumental 606 E Alpha Drive. It was within those walls that the Epsilon Upsilon Chapter truly came into its own. For decades, 606 E Alpha Drive served as the backdrop for our most cherished traditions a place where lasting memories were forged, leaders of men were shaped and grew into brothers of character.
                 </p>
-                <p>Beyond our internal bond, the Epsilon Chapter remains a force for good within the Tempe community. Through expansive philanthropy and a commitment to service, we work to better our surroundings and humanity as a whole. From the halls of Alpha Drive to our current endeavors, we remain steadfast in the Jordan Standard. Rooted in Friendship, Justice, and Learning, the gentlemen of Sigma Chi continue to attract leaders of men who live our Creed ensuring our legacy of excellence remains respected for generations to come.</p>
+                <p>After 606 E Alpha Drive, our chapter no longer had a central home, but our commitment never wavered. Through philanthropy and a steadfast dedication to service, we continued to uplift our campus and the Tempe community. Now, we proudly return to Arizona State University to begin the rechartering process, restoring the legacy of Sigma Chi and setting the foundation for the next generation of leaders of men.</p>
             </div>
         </div>
       </div>
@@ -144,7 +144,7 @@ const About = () => {
         <div className="about-cards__header">
             <h2 className="about-cards__heading">The Sigma Chi Standard</h2>
             <p className="about-cards__subheading">
-            A look at the numbers, history, and values that drive our national brotherhood and philanthropic mission.
+            A look at the numbers, history, and values that drive our Fraternity.
             </p>
         </div>
         

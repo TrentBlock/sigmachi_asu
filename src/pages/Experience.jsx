@@ -12,15 +12,15 @@ function Experience() {
     const experienceCategories = [
         { 
             title: "Philanthropy & Community", 
-            description: "Derby Days isn't just a week; it's our dedication. We partner with Greek organizations campus-wide, uniting ASU to raise critical funds for the Huntsman Cancer Institute.",
+            description: "Derby Days is more than just a week it’s a reflection of our commitment to giving back. Beyond Derby Days, we stay involved in philanthropic efforts year round, working with Greek organizations across campus to support causes like the Huntsman Cancer Institute and make a lasting impact.",
             // PAIR 1: Philanthropy Images
-            imageGroup: [getImg("kkgphilo.webp"), getImg("skphilo.webp")],
+            imageGroup: [getImg("kkgphilo.webp")],
             imageLayout: "split", // Vertical split/stack
             icon: <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
         },
         { 
             title: "Tailgates & Game Days", 
-            description: "Experience ASU football with the undisputed best tailgate on campus. From legendary student turnouts to welcoming alumni back to the GLV, game days are defining Sigma Chi moments.",
+            description: "Game days at ASU are some of our favorite times together. From lively tailgates with friends to catching up with alumni at the GLV, these moments are all about fun, and making memories",
             // PAIR 2: Tailgates Images (User image + generic brotherhood image for scale)
             imageGroup: [getImg("Sigma Chi Tailgate Tent.webp"), getImg("Brotherhood.webp")], 
             imageLayout: "interlocking", // Overlapping diagonal layout
@@ -28,7 +28,7 @@ function Experience() {
         },
         { 
             title: "Brotherhood Retreats", 
-            description: "From camping trips in the Arizona wild to dedicated class retreats, these getaways forge bonds that last a lifetime. They provide necessary moments for reflection, unity, and developing the Jordan Standard.",
+            description: "Whether it’s trips out into the Arizona desert or time spent with your class, these retreats bring everyone closer and build bonds that last well beyond college.",
             // PAIR 3: Retreats Images (Using 'Camping Trip' + the new 'retreat.jpg')
             imageGroup: [getImg("Camping Trip.webp"), getImg("retreat.webp")], 
             imageLayout: "grid", // Two dynamic grid boxes
@@ -36,7 +36,7 @@ function Experience() {
         },
         { 
             title: "Sports & Chapter Events", 
-            description: "We are competitors and brothers. Whether it's high-energy spikeball tournaments on the GLV lawn or formal events in Scottsdale, we balance intense competition with genuine celebration.",
+            description: "Our chapter events are more than just gatherings, they’re where we come together as brothers. From competitions to elegant formals, these moments strengthen our friendships, celebrate our bond, and create memories that last a lifetime.",
             // PAIR 4: Sports/Formals (spikeball + formal image)
             imageGroup: [getImg("spikeball.webp"), getImg("Brotherhood 2.webp")],
             imageLayout: "split", // Vertical split/stack
@@ -44,7 +44,7 @@ function Experience() {
         },
         { 
             title: "Service & Service Learning", 
-            description: "Sigma Chi is committed to lifelong service. We move beyond donations, partnering with local Tempe organizations like Feed My Starving Children (FMSC) to make a tactile, hands-on difference in our community.",
+            description: "Giving back is just part of what we do. Whether it’s volunteering with groups or helping out around Tempe, we try to show up and actually make a difference.",
             // PAIR 5: Service Images (Both FMSC pictures)
             imageGroup: [getImg("FMSC.webp"), getImg("FMSC 2.webp")], 
             imageLayout: "interlocking", // Overlapping diagonal layout

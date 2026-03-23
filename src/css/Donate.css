@@ -70,8 +70,12 @@
     flex-direction: column;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
-.donate-method-card:first-of-type {
+.donate-method-card:first-of-type, .donate-method-card:last-of-type {
     grid-column-start: span 2;
+}
+.donate-method-card:last-of-type{
+    text-align: center;
+    font-weight: 700;
 }
 .donate-method-card:hover {
     transform: translateY(-5px);
@@ -202,7 +206,7 @@
         width: 150px;
         height: 150px;
     }
-    .donate-method-card:first-of-type {
+    .donate-method-card:first-of-type, .donate-method-card:last-of-type {
         grid-column-start: span 1;
     }
 }
