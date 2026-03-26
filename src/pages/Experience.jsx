@@ -1,5 +1,6 @@
 import React from 'react';
 import '../css/Experience.css';
+import SEO from '../components/SEO';
 
 function Experience() {
     // 1. Dynamically import all images in the folder using Vite
@@ -64,6 +65,11 @@ function Experience() {
 
     return (
         <div className="experience-page">
+            <SEO 
+                title="The Experience" 
+                description="Explore the traditions, philanthropy, and lifelong brotherhood of the Epsilon Upsilon chapter of Sigma Chi at ASU."
+                url="/experience"
+            />
             <section className="exp-header">
                 <div className="container">
                     <h1 className="exp-title fade-in-up">The Sigma Chi Experience</h1>

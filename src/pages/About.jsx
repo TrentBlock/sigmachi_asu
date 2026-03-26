@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import '../css/About.css';
+import SEO from '../components/SEO';
 
 // Custom Hook for Animated Counters
 const AnimatedCounter = ({ value, prefix = '', suffix = '', duration = 2000, useCommas=true }) => {
@@ -122,7 +123,11 @@ const About = () => {
 
   return (
     <section className="about-trust-page">
-      
+      <SEO 
+    title="Our Story" 
+    description="Learn about the history, core values, and the Jordan Standard of the Sigma Chi Epsilon Upsilon chapter at Arizona State University."
+    url="/about" 
+/>
       {/* 1. ASU Narrative Section */}
       <div className="about-narrative">
         <div className="about-narrative__container">

@@ -1,9 +1,15 @@
 import React from 'react';
 import '../css/Donate.css';
+import SEO from '../components/SEO';
 
 function Donate() {
   return (
     <section className="donate-content-section">  
+    <SEO
+    title="Donate & Support" 
+    description="Support the official rechartering of the Sigma Chi Epsilon Upsilon chapter at ASU. Make a secure contribution to help us rebuild our campus legacy."
+    url="/donate" 
+/>
         <div className="donate-content-container">  
             
             {/* Header & Mission Section */}

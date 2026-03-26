@@ -30,6 +30,7 @@ import FlashBack6 from '../images/flashbacks/IMG_7147.webp';
 import flash1 from '../images/flashbacks/flash1.webp';
 import flash2 from '../images/flashbacks/flash2.webp';
 import flash3 from '../images/flashbacks/flash3.webp';
+import SEO from '../components/SEO';
 
 const AlumniPage = () => {
   // Array of scrapbook images
@@ -115,7 +116,11 @@ const AlumniPage = () => {
 
   return (
     <div className="alumni-page">
-        
+        <SEO 
+    title="Alumni & History" 
+    description="Reconnect with the Epsilon Upsilon chapter. View chapter flashbacks, update your contact information, and stay involved with our alumni network."
+    url="/class" 
+/>
         {/* 1. Hero Section */}
         <section className="alumni-hero" style={{ backgroundImage: `url(${heroImg})` }}>
             <div className="alumni-hero__overlay">

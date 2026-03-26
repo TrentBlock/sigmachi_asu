@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import emailjs from '@emailjs/browser'; // <-- 1. Import EmailJS
 import '../css/Contact.css';
+import SEO from '../components/SEO';
 
 function Contact() {
     const [formData, setFormData] = useState({
@@ -63,6 +64,11 @@ function Contact() {
 
     return (
         <section className="newsletter-section">
+            <SEO
+    title="Stay in the Loop" 
+    description="Get in touch with the Sigma Chi Epsilon Upsilon chapter at ASU. Subscribe to our newsletter to receive the latest updates on events and recruitment."
+    url="/contact" 
+/>
             <div className="container">
                 <div className="newsletter-wrapper fade-in-up">
                     

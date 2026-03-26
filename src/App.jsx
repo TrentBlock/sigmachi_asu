@@ -10,9 +10,11 @@ import Class from './pages/Class'
 import Placements from './pages/Placements'
 import Contact from './pages/Contact'
 import Donate from './pages/Donate'
+import { HelmetProvider } from 'react-helmet-async'
 
 function App() {
   return (
+    <HelmetProvider>
     <Router>
       <ScrollToTop />
       <Navbar />
@@ -29,6 +31,7 @@ function App() {
       </main>
       <Footer />
     </Router>
+    </HelmetProvider>
   )
 }
 
