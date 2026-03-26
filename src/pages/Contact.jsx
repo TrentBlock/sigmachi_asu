@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import emailjs from '@emailjs/browser'; // <-- 1. Import EmailJS
 import '../css/Contact.css';
 
 function Contact() {
@@ -8,6 +9,9 @@ function Contact() {
         email: '',
         gradYear: ''
     });
+
+    // Added a loading state for better user experience
+    const [isSubmitting, setIsSubmitting] = useState(false);
 
     const handleChange = (e) => {
         const { name, value } = e.target;
@@ -19,20 +23,42 @@ function Contact() {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        console.log('Newsletter subscription submitted:', formData);
-        
-        // Add your form submission/newsletter logic here
-        
-        // Clear the form after submission
-        setFormData({
-            firstName: '',
-            lastName: '',
-            email: '',
-            gradYear: ''
+        setIsSubmitting(true); // Disables the button while sending
+
+        // Prepare the variables your EmailJS template expects
+        const templateParams = {
+            firstName: formData.firstName,
+            lastName: formData.lastName,
+            email: formData.email,
+            gradYear: formData.gradYear
+        };
+
+        // Send the email using your specific Service ID and Template ID
+        emailjs.send(
+            'service_nc1q0xu',    
+            'template_q4v3cko',   
+            templateParams,
+            'S09Eblgts2EKp6YSR'    
+        )
+        .then((response) => {
+            console.log('SUCCESS!', response.status, response.text);
+            
+            // Clear the form after a successful submission
+            setFormData({
+                firstName: '',
+                lastName: '',
+                email: '',
+                gradYear: ''
+            });
+            
+            alert("Thanks for subscribing! Check your email for a confirmation.");
+            setIsSubmitting(false);
+        })
+        .catch((err) => {
+            console.error('FAILED...', err);
+            alert("Oops! Something went wrong. Please try again.");
+            setIsSubmitting(false);
         });
-        
-        // Optional: Add a success toast or message here
-        alert("Thanks for subscribing!"); 
     };
 
     return (
@@ -98,8 +124,13 @@ function Contact() {
                             />
                         </div>
                         
-                        <button type="submit" className="newsletter-submit-btn">
-                            Subscribe
+                        <button 
+                            type="submit" 
+                            className="newsletter-submit-btn"
+                            disabled={isSubmitting}
+                            style={{ opacity: isSubmitting ? 0.7 : 1, cursor: isSubmitting ? 'wait' : 'pointer' }}
+                        >
+                            {isSubmitting ? 'Subscribing...' : 'Subscribe'}
                         </button>
                     </form>
                     
