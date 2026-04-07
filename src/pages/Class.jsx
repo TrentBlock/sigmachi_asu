@@ -124,7 +124,7 @@ const AlumniPage = () => {
         {/* 1. Hero Section */}
         <section className="alumni-hero" style={{ backgroundImage: `url(${heroImg})` }}>
             <div className="alumni-hero__overlay">
-                <h1 className="alumni-hero__title">From 606 E Alpha Drive, to the Plex</h1>
+                <h1 className="alumni-hero__title">From 606 E Alpha Drive, to the PlΣX</h1>
                 <p className="alumni-hero__subtitle">
                      With more than 300,000 Alumni worldwide and over 2,000 from this chapter at Arizona State University our legacy spans across presidents, football coaches, artists, and leaders across every field.
                 </p>

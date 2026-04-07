@@ -25,6 +25,10 @@ function Mission() {
                         <span className="btn-text">Alumni and History</span>
                         <span className="btn-arrow">&rarr;</span>
                     </Link>
+                    <Link to="/donate" className="mission-btn mission-btn--primary">
+                        <span className="btn-text">Support the Chapter</span>
+                        <span className="btn-arrow">&rarr;</span>
+                    </Link>
                 </div>
             </div>
         </div>
